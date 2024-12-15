@@ -12,6 +12,37 @@
             margin: 0;
             font-family: Arial, Helvetica, sans-serif;
         }
+         /* Main content */
+         #content {
+            display: block; /* Initially display content */
+        }
+
+        /* Hidden message for mobile/tablet */
+        #message {
+            display: none; /* Hide by default */
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: #000;
+            color: white;
+            text-align: center;
+            font-size: 50px;
+            padding-top: 20%;
+            z-index: 1001; /* Make sure it's on top */
+        }
+
+        /* Media Query for Mobile and Tablet */
+        @media (max-width: 1024px) {
+            #content {
+                display: none; /* Hide main content on mobile/tablets */
+            }
+
+            #message {
+                display: block; /* Show message */
+            }
+        }
         header {
             display: flex;
             justify-content: space-between;
@@ -301,47 +332,49 @@
     </style>
 </head>
 <body>
-    <header class="header">
-        <div class="myname"><a href="#home">< VANSH SAHU ></a></div>
-        <div class="head-hr">
-            <hr><pre></pre><hr>
-        </div>
-        <nav class="navbar">
-            <span><a href="#home">HOME</a></span>
-            <span><a href="#about">ABOUT</a></span>
-            <span><a href="#projects">PROJECTS</a></span>
-        </nav>
-    </header>
-    <main>
-        <div class="mainheading" id="home">
-            <p class="front">FRONT</p><hr>
-            <p class="end">END</p>
-        </div>
-        <div class="developer">DEVELOPER</div>
-        <img src="Public/Images/my image.jpg" alt="image not found" title="Vansh Sahu">
-        <div class="layer"></div>
-    </main>
-    <button class="contact">LET'S</button>
-    <span class="bi bi-chat-left-text"></span>
-    <button class="contact2">TALK</button><hr class="hr3">
-    <section class="section1">
-        <div class="about" id="about"><h1>ABOUT ME</h1></div>
-        <div class="about-content">
-            <div>
-                <p class="p1">I am Vansh Sahu, a tech enthusiast and buddding
-                web developer with a passion for creating visually appealing and functional
-                websites. Currently, I am honing my skills at PW IOI while exploring
-                various aspects of front-end development. I thrive on solving problems, 
-                learning new technologies, and sharing my journey to inspire others. My interests
+    <div id="message">Sorry, this portfolio is unavailable on mobile and tablet devices.</div>
+    <div id="content">
+        <header class="header">
+            <div class="myname"><a href="#home">< VANSH SAHU ></a></div>
+            <div class="head-hr">
+                <hr><pre></pre><hr>
+            </div>
+            <nav class="navbar">
+                <span><a href="#home">HOME</a></span>
+                <span><a href="#about">ABOUT</a></span>
+                <span><a href="#projects">PROJECTS</a></span>
+            </nav>
+        </header>
+        <main>
+            <div class="mainheading" id="home">
+                <p class="front">FRONT</p><hr>
+                <p class="end">END</p>
+            </div>
+            <div class="developer">DEVELOPER</div>
+            <img src="Public/Images/my image.jpg" alt="image not found" title="Vansh Sahu">
+            <div class="layer"></div>
+        </main>
+        <button class="contact">LET'S</button>
+        <span class="bi bi-chat-left-text"></span>
+        <button class="contact2">TALK</button><hr class="hr3">
+        <section class="section1">
+            <div class="about" id="about"><h1>ABOUT ME</h1></div>
+            <div class="about-content">
+                <div>
+                    <p class="p1">I am Vansh Sahu, a tech enthusiast and buddding
+                        web developer with a passion for creating visually appealing and functional
+                        websites. Currently, I am honing my skills at PW IOI while exploring
+                        various aspects of front-end development. I thrive on solving problems, 
+                        learning new technologies, and sharing my journey to inspire others. My interests
                 extend beyond coding; I enjoy reading, writing reflective stories and
                 improving my communications skills.  
                 </p>
             </div>
             <div>
                 <p class="p2">In this evolving world of technology, I aim to blend creativity
-                with technical expertise to design solutions that leave a meaningful
-                impact. This space is my way of sharing my growth, challenges, and aspirations. 
-             </p>
+                    with technical expertise to design solutions that leave a meaningful
+                    impact. This space is my way of sharing my growth, challenges, and aspirations. 
+                </p>
             </div>
         </div>
     </section><hr>
@@ -405,5 +438,6 @@
         <span>Bengaluru, India</span>
         <span>&#169; All Rights Reserved</span>
     </div>
+</div>
 </body>
 </html>
