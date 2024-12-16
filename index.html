@@ -81,6 +81,7 @@
             margin-left: -300px;
             margin-top: -90px;
             font-size: 140px;
+            height: 660px;
         }
         .front:hover{
             color: #ffc466;
@@ -161,7 +162,7 @@
         .contact{
             position: absolute;
             top: 500px;
-            margin-left: 300px;
+            margin-left: 303px;
             font-size: 45px;
             font-weight: bolder;
             color: black;
@@ -174,9 +175,8 @@
         }
         .contact2{
             position: absolute;
-            top: 598px;
-            left: 210px;
-            margin-left: 300px;
+            top: 500px;
+            left: 510px;
             font-size: 45px;
             font-weight: bolder;
             color: black;
@@ -184,8 +184,8 @@
             border: 2px solid black;
             width: 200px;
             height: 80px;
-            border-top-right-radius: 25px;
-            border-bottom-left-radius: 25px;
+            border-top-left-radius: 25px;
+            border-bottom-right-radius: 25px;
         }
         .contact:hover{
             color: #ff8e1d;
@@ -195,14 +195,41 @@
             color: #ff8e1d;
             cursor: pointer;
         }
-        .bi-chat-left-text{
-            font-size: 60px;
+        .bi-linkedin{
+            display: flex;
+            justify-content: space-evenly;
+            padding-top: 15px;
+            font-size: 35px;
             position: absolute;
-            left: 505px;
-            top: 540px;
-            cursor: pointer;
+            top: 585px;
+            left: 0;
+            margin-left: 300px;
+            font-weight: bolder;
+            background-color: white;
+            border: 2px solid black;
+            width: 200px;
+            height: 60px;
+            border-top-left-radius: 25px;
+            border-bottom-right-radius: 25px;
         }
-        .bi-chat-left-text:hover{
+        .bi-github{
+            display: flex;
+            justify-content: space-evenly;
+            padding-top: 15px;
+            font-size: 35px;
+            position: absolute;
+            top: 585px;
+            margin-left: 300px;
+            left: 210px;
+            font-weight: bolder;
+            background-color: white;
+            border: 2px solid black;
+            width: 200px;
+            height: 60px;
+            border-top-right-radius: 25px;
+            border-bottom-left-radius: 25px;
+        }
+        .social span:hover{
             color: #ff8e1d;
         }
         .hr3{
@@ -329,10 +356,13 @@
             font-size: 20px;
             font-weight: bolder;
         }
+        .social span{
+            color: black;
+        }
     </style>
 </head>
 <body>
-    <div id="message">Sorry, this portfolio is unavailable on mobile and tablet devices.</div>
+    <div id="message">Sorry, this portfolio is unavailable on mobile and tablet devices.<br><br>Pls visit on a laptop or dektop for better experience </div>
     <div id="content">
         <header class="header">
             <div class="myname"><a href="#home">< VANSH SAHU ></a></div>
@@ -353,10 +383,15 @@
             <div class="developer">DEVELOPER</div>
             <img src="Public/Images/my image.jpg" alt="image not found" title="Vansh Sahu">
             <div class="layer"></div>
-        </main>
-        <button class="contact">LET'S</button>
-        <span class="bi bi-chat-left-text"></span>
-        <button class="contact2">TALK</button><hr class="hr3">
+            <div  class="design">
+                <div class="social">
+                    <a href="https://www.linkedin.com/in/vanshsahu21" target="_blank"><span class=".bi bi-linkedin">Linkedin</span></a>
+                    <a href="https://github.com/VanshS-21/Portfolio" target="_blank"><span class=".bi bi-github">Github</span></a>
+                </div>
+            </main>
+            <button class="contact">LET'S</button>
+            <button class="contact2">TALK</button><hr class="hr3">
+        </div>
         <section class="section1">
             <div class="about" id="about"><h1>ABOUT ME</h1></div>
             <div class="about-content">
