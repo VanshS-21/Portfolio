@@ -1,479 +1,383 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Portfolio</title>
-    <link rel="stylesheet" href="node_modules/bootstrap-icons/font/bootstrap-icons.css">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
-    <style>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>CURATOR | Full Stack Developer Portfolio</title>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&amp;family=Inter:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+        tailwind.config = {
+          darkMode: "class",
+          theme: {
+            extend: {
+              "colors": {
+                      "error-container": "#93000a",
+                      "surface-tint": "#f7b991",
+                      "inverse-surface": "#e6e2de",
+                      "on-tertiary-fixed-variant": "#5b4300",
+                      "on-secondary-fixed": "#00210f",
+                      "primary-fixed-dim": "#f7b991",
+                      "surface-container-high": "#2b2a27",
+                      "secondary-fixed": "#c2edcc",
+                      "secondary": "#a6d1b1",
+                      "on-primary-container": "#502a0c",
+                      "secondary-container": "#2b5138",
+                      "on-primary": "#4c2709",
+                      "on-secondary-fixed-variant": "#284e36",
+                      "tertiary-container": "#b9984e",
+                      "surface-container-lowest": "#0f0e0c",
+                      "outline": "#9e8d84",
+                      "on-secondary": "#103721",
+                      "on-error-container": "#ffdad6",
+                      "on-tertiary": "#3f2e00",
+                      "primary-container": "#c8906a",
+                      "tertiary-fixed-dim": "#e6c273",
+                      "surface-dim": "#141311",
+                      "surface-container-highest": "#363432",
+                      "primary-fixed": "#ffdcc6",
+                      "on-primary-fixed": "#301400",
+                      "background": "#141311",
+                      "on-tertiary-container": "#443100",
+                      "tertiary-fixed": "#ffdf9d",
+                      "inverse-primary": "#825432",
+                      "surface-container": "#211f1d",
+                      "on-primary-fixed-variant": "#673d1d",
+                      "on-tertiary-fixed": "#251a00",
+                      "surface-container-low": "#1d1b19",
+                      "tertiary": "#e6c273",
+                      "on-secondary-container": "#98c2a3",
+                      "on-background": "#e6e2de",
+                      "surface-variant": "#363432",
+                      "error": "#ffb4ab",
+                      "on-surface-variant": "#d6c3b8",
+                      "inverse-on-surface": "#32302e",
+                      "outline-variant": "#51443c",
+                      "on-surface": "#e6e2de",
+                      "surface": "#141311",
+                      "secondary-fixed-dim": "#a6d1b1",
+                      "primary": "#f7b991",
+                      "on-error": "#690005",
+                      "surface-bright": "#3b3936"
+              },
+              "borderRadius": {
+                      "DEFAULT": "1rem",
+                      "lg": "2rem",
+                      "xl": "3rem",
+                      "full": "9999px"
+              },
+              "fontFamily": {
+                      "headline": ["DM Serif Display", "serif"],
+                      "display": ["DM Serif Display", "serif"],
+                      "body": ["Inter", "sans-serif"],
+                      "label": ["Inter", "sans-serif"]
+              }
+            },
+          },
+        }
+    </script>
+<style>
         body {
-            background-color: #000; /* Improved black color for consistency */
-            color: white;
-            margin: 0;
-            font-family: Arial, Helvetica, sans-serif;
+            background-color: #141311;
+            color: #e6e2de;
+            font-family: 'Inter', sans-serif;
+            overflow-x: hidden;
         }
-         /* Main content */
-         #content {
-            display: block; /* Initially display content */
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
         }
-
-        /* Hidden message for mobile/tablet */
-        #message {
-            display: none; /* Hide by default */
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background-color: #000;
-            color: white;
-            text-align: center;
-            font-size: 50px;
-            padding-top: 20%;
-            z-index: 1001; /* Make sure it's on top */
+        .serif-numbers {
+            font-family: 'DM Serif Display', serif;
         }
-
-        /* Media Query for Mobile and Tablet */
-        @media (max-width: 1024px) {
-            #content {
-                display: none; /* Hide main content on mobile/tablets */
-            }
-
-            #message {
-                display: block; /* Show message */
-            }
-        }
-        header {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 15px 75px;
-            background-color: #000;
-            position: sticky;
-            top: 0;
-            z-index: 1000;
-        }
-        .myname {
-            font-size: 30px;
-            font-weight: bolder;
-            font-family: monospace;
-            cursor: pointer;
-        }
-        .head-hr{
-            width: 80px;
-            margin-left: 155px;
-        }
-        .navbar {
-            display: flex;
-            gap: 20px;
-            font-size: 30px;
-            font-weight: bolder;
-        }
-        .navbar span {
-            cursor: pointer;
-            padding-left: 10px;
-        }
-        .navbar span:hover {
-            color: #ffc466;
-        }
-        main {
-            text-align: center;
-            margin-left: -300px;
-            margin-top: -90px;
-            font-size: 140px;
-            height: 660px;
-        }
-        .front:hover{
-            color: #ffc466;
-            cursor: pointer;
-        }
-        .end:hover{
-            color: #ffc466;
-            cursor: pointer;
-        }
-        .mainheading {
-            display: inline-flex;
-            align-items: center;
-            font-weight: bolder;
-            gap: 10px;
-            transform: scaleY(1);
-            letter-spacing: -5px;
-        }
-        .mainheading hr {
-            width: 350px;
-            border: 2px solid white;
-            margin: 0px;
-        }
-        .developer {
-            font-size: 140px;
-            font-weight: bolder;
-            margin-top: -180px;
-            margin-left: -200px;
-            transform: scaleY(1);
-            letter-spacing: -5px;
-        }
-        .developer:hover{
-            color: #ffc466;
-        }
-        @media (max-width: 1280px) {
-            header {
-                flex-direction: column;
-                align-items: flex-start;
-            }
-            .navbar {
-                gap: 15px;
-                font-size: 16px;
-            }
-            main {
-                margin: 50px 10px;
-            }
-            .mainheading {
-                font-size: 40px;
-            }
-            .developer {
-                font-size: 30px;
-            }
-        }
-        img{
-            width: 300px;
-            height: 400px;
-            margin-left: 1400px;
-            margin-top: -180px;
-            border: 3px solid white;
-            border-top-left-radius: 25%;
-            border-bottom-right-radius: 25%;
-            object-fit: cover;
-            transition: transform 0.1s ease;
-        }
-        img:hover{
-            transform: scale(1.05);
-            box-shadow: 0 4px 15px rgba(255, 255, 255, 0.5);
-        }
-        .layer{
-            width: 300px;
-            height: 400px;
-            margin-left: 1490px;
-            margin-top: -410px;
-            border: 3px solid white;
-            border-top-left-radius: 25%;
-            border-bottom-right-radius: 25%;
-            background-color: white;
-        }
-        .contact{
-            position: absolute;
-            top: 500px;
-            margin-left: 303px;
-            font-size: 45px;
-            font-weight: bolder;
-            color: black;
-            background-color: white;
-            border: 2px solid black;
-            width: 200px;
-            height: 80px;
-            border-top-right-radius: 25px;
-            border-bottom-left-radius: 25px;
-        }
-        .contact2{
-            position: absolute;
-            top: 500px;
-            left: 510px;
-            font-size: 45px;
-            font-weight: bolder;
-            color: black;
-            background-color: white;
-            border: 2px solid black;
-            width: 200px;
-            height: 80px;
-            border-top-left-radius: 25px;
-            border-bottom-right-radius: 25px;
-        }
-        .contact:hover{
-            color: #ff8e1d;
-            cursor: pointer;
-        }
-        .contact2:hover{
-            color: #ff8e1d;
-            cursor: pointer;
-        }
-        .bi-linkedin{
-            display: flex;
-            justify-content: space-evenly;
-            padding-top: 15px;
-            font-size: 35px;
-            position: absolute;
-            top: 585px;
-            left: 0;
-            margin-left: 300px;
-            font-weight: bolder;
-            background-color: white;
-            border: 2px solid black;
-            width: 200px;
-            height: 60px;
-            border-top-left-radius: 25px;
-            border-bottom-right-radius: 25px;
-        }
-        .bi-github{
-            display: flex;
-            justify-content: space-evenly;
-            padding-top: 15px;
-            font-size: 35px;
-            position: absolute;
-            top: 585px;
-            margin-left: 300px;
-            left: 210px;
-            font-weight: bolder;
-            background-color: white;
-            border: 2px solid black;
-            width: 200px;
-            height: 60px;
-            border-top-right-radius: 25px;
-            border-bottom-left-radius: 25px;
-        }
-        .social span:hover{
-            color: #ff8e1d;
-        }
-        .hr3{
-            margin-top: 80px;
-        }
-        .section1 h1{
-            text-align: center;
-            font-size: 100px;
-            margin: 25px;
-            border-bottom: 1px solid white;
-            margin-left: 492px;
-            margin-right: 492px;
-        }
-        .about-content{
-            display: grid;
-            grid-template-columns: 6fr 6fr;
-            gap: 100px;
-            text-align: justify;
-            margin: 50px;
-            margin-left: 100px;
-            margin-right: 100px;
-            font-size: 25px;
-            line-height:1.6;
-            letter-spacing: 1.6px;
-        }
-        .section2 h1{
-            text-align: center;
-            font-size: 60px;
-            margin: 25px;
-            border-bottom: 1px solid white;
-            margin-left: 290px;  
-            margin-right: 290px;  
-        }
-        .marq2{
-            margin-top: 50px;
-            font-size: 40px;
-            padding-top: 25px;
-            height: 75px;
-            background-color: rgb(56, 55, 55);
-            rotate: 3deg;
-        }
-        .marq2 span{
-            padding-left: 20px;
-        }
-        .marq1{
-            margin-top: -250px;
-            font-size: 40px;
-            padding-top: 25px;
-            height: 75px;
-            background-color: rgb(254, 65, 65);
-            rotate: -3deg;
-        }
-        .marq1 span{
-            padding-left: 20px;
-        }
-        .hr4{
-            margin-top: 80px;
-        }
-        .section3 h2{
-            text-align: center;
-            font-size: 60px;
-            border-bottom: 1px solid white;
-            margin-left: 465px;  
-            margin-right: 465px;  
-        }
-        .projects1{
-            display: flex;
-            cursor: pointer;
-        }
-        .projects2{
-            cursor: pointer;
-            display: flex;
-        }
-        .section3 iframe{
-            margin: 0 10px;
-            border: 2px solid white;
-        }
-        figcaption{
-            font-size: 30px;
-            text-align: center;
-            font-weight: bolder;
-        }
-        .marq3{
-            margin-top: 50px;
-            border-top: 1px solid white;
-            border-bottom: 1px solid white;
-            font-size: 50px;
-            word-spacing: 35px;
-            padding: 20px;
-            font-weight: bolder;
-            font-family: Verdana, Geneva, Tahoma, sans-serif;
-            cursor: pointer;
-        }
-        .marq3:hover{
-            color: #ffc466;
-        }
-        .connect{
-            margin-top: 30px;
-            font-size: 50px;
-            text-align: center;
-            text-decoration: underline;
-            font-weight: bolder;
-            color: rgb(152, 152, 152);
-            letter-spacing: 1.5px;
-            height: 100px;
-            cursor: pointer;
-        }
-        .connect:hover{
-            color: #ffc466;
-        }
-        a{
-            color: white;
-            text-decoration: none;
-        }
-        a:active{
-            color: white;
-        }
-        .info{
-            display: flex;
-            justify-content: space-between;
-            margin: 40px;
-            margin-top: -20px;
-            margin-bottom: -20px;
-            font-size: 20px;
-            font-weight: bolder;
-        }
-        .social span{
-            color: black;
+        .glass-nav {
+            background-color: rgba(33, 31, 29, 0.7);
+            backdrop-filter: blur(20px);
         }
     </style>
-</head>
-<body>
-    <div id="message">Sorry, this portfolio is unavailable on mobile and tablet devices.<br><br>Pls visit on a laptop or dektop for better experience </div>
-     <div id="content">
-        <header class="header">
-            <div class="myname"><a href="#home">< VANSH SAHU ></a></div>
-            <div class="head-hr">
-                <hr><pre></pre><hr>
-            </div>
-            <nav class="navbar">
-                <span><a href="#home">HOME</a></span>
-                <span><a href="#about">ABOUT</a></span>
-                <span><a href="#projects">PROJECTS</a></span>
-            </nav>
-        </header>
-        <main>
-            <div class="mainheading" id="home">
-                <p class="front">FRONT</p><hr>
-                <p class="end">END</p>
-            </div>
-            <div class="developer">DEVELOPER</div>
-            <img src="Public/Images/my image.jpg" alt="image not found" title="Vansh Sahu">
-            <div class="layer"></div>
-            <div  class="design">
-                <div class="social">
-                    <a href="https://www.linkedin.com/in/vanshsahu21" target="_blank"><span class=".bi bi-linkedin">Linkedin</span></a>
-                    <a href="https://github.com/VanshS-21/Portfolio" target="_blank"><span class=".bi bi-github">Github</span></a>
-                </div>
-            </div>    
-        </main>
-            <button class="contact">LET'S</button>
-            <button class="contact2">TALK</button><hr class="hr3">
-        <section class="section1">
-            <div class="about" id="about"><h1>ABOUT ME</h1></div>
-            <div class="about-content">
-                <div>
-                    <p class="p1">I am Vansh Sahu, a tech enthusiast and buddding
-                        web developer with a passion for creating visually appealing and functional
-                        websites. Currently, I am honing my skills at PW IOI while exploring
-                        various aspects of front-end development. I thrive on solving problems, 
-                        learning new technologies, and sharing my journey to inspire others. My interests
-                        extend beyond coding; I enjoy reading, writing reflective stories and
-                        improving my communications skills.
-                    </p>
-                </div>
-                <div>
-                    <p class="p2">In this evolving world of technology, I aim to blend creativity
-                        with technical expertise to design solutions that leave a meaningful
-                        impact. This space is my way of sharing my growth, challenges, and aspirations. 
-                    </p>
-                </div>
-            </div>
-        </section><hr>
-        <section class="section2">
-            <div><h1>VARIOUS TECHNOLOGIES I USE</h1></div>
-            <marquee class="marq2" behavior="scroll" direction="left" scrollamount=15">
-                <span class="bi bi-stars"> &nbsp;HTML5</span> 
-                <span class="bi bi-stars"> &nbsp;CSS</span>
-                <span class="bi bi-stars"> &nbsp;C</span>
-                <span class="bi bi-stars"> &nbsp;EXCEL</span> 
-                <span class="bi bi-stars"> &nbsp;PYTHON</span>
-                <span class="bi bi-stars"> &nbsp;BOOTSTRAP</span>
-                <span class="bi bi-stars"> &nbsp;JAVASCRIPT</span>
-            </marquee>
-            <marquee class="marq1" behavior="scroll" direction="right" scrollamount=15">
-                <span class="bi bi-stars"> &nbsp;HTML5</span> 
-                <span class="bi bi-stars"> &nbsp;CSS</span>
-                <span class="bi bi-stars"> &nbsp;C</span>
-                <span class="bi bi-stars"> &nbsp;EXCEL</span> 
-                <span class="bi bi-stars"> &nbsp;PYTHON</span>
-                <span class="bi bi-stars"> &nbsp;BOOTSTRAP</span>
-                <span class="bi bi-stars"> &nbsp;JAVASCRIPT</span>
-            </marquee>
-        </section><hr class="hr4">
-        <section class="section3">
-            <div id="projects"><h2>RECENT PROJECTS</h2></div>
-            <div class="projects1">
-                <figure>
-                    <iframe width="650" height="355" src="https://www.youtube.com/embed/unlqo13AJcU?si=4wEpguyaP-EbqlbC" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-                    <figcaption>
-                        AMAZON UI CLONE
-                    </figcaption>
-                </figure>
-                <figure>
-                    <iframe width="650" height="355" src="https://www.youtube.com/embed/AJw6510YmO4?si=iPVDhF6LOklhd_8Y" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-                    <figcaption>
-                        YOUTUBE UI CLONE
-                    </figcaption>
-                </figure>
-            </div>
-            <div class="projects2">
-                <figure>
-                    <iframe class="video3" width="650" height="355" src="https://www.youtube.com/embed/O9O46EVxMQU?si=pa12qJtpPm6wthSf" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-                    <figcaption>
-                        PERSONAL WEBSITE UI
-                    </figcaption>
-                </figure>
-                <figure>
-                    <iframe width="650" height="355" src="https://www.youtube.com/embed/dn0rDt9MFlI?si=1J29kOrh0TuHdnt8" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-                    <figcaption>
-                        COMPILATION OF SINGLE PAGE PROJECTS
-                    </figcaption>
-                </figure>
-            </div>
-        </section>
-        <marquee class="marq3" behavior="scroll" direction="left" scrollamount="18">Hello Wanna Do Something Together? Let'S Collaborate!</marquee>
-        <div class="connect">
-            Vansh.ConnectMe@gmail.com
-        </div>
-        <div class="info">
-            <span>Bengaluru, India</span>
-            <span>&#169; All Rights Reserved</span>
-        </div>
-    </div>
-</body>
-</html>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  <link rel="stylesheet" href="index.css" />
+  <script src="script.js" defer></script>
+  </head>
+<body class="dark">
+<!-- TopAppBar -->
+<nav class="fixed top-0 z-50 w-full px-8 py-6 glass-nav flex justify-between items-center max-w-full mx-auto">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-[#C8906A]">fingerprint</span>
+<span class="text-2xl font-display tracking-tighter text-[#F4EFE3]">CURATOR</span>
+</div>
+<div class="hidden md:flex gap-8 items-center">
+<a class="text-[#F4EFE3]/60 font-medium hover:text-[#C8906A] transition-all duration-400 ease-in-out uppercase tracking-[0.15em] text-[0.75rem]" href="#about">About</a>
+<a class="text-[#F4EFE3]/60 font-medium hover:text-[#C8906A] transition-all duration-400 ease-in-out uppercase tracking-[0.15em] text-[0.75rem]" href="#work">Work</a>
+<a class="text-[#F4EFE3]/60 font-medium hover:text-[#C8906A] transition-all duration-400 ease-in-out uppercase tracking-[0.15em] text-[0.75rem]" href="#contact">Contact</a>
+</div>
+<button class="bg-transparent border border-[#C8906A]/50 text-[#C8906A] px-6 py-2 rounded-full font-medium tracking-widest text-xs hover:bg-[#C8906A]/10 transition-all active:scale-95 duration-400">HIRE ME</button>
+</nav>
+<main>
+<!-- Hero Section -->
+<section class="relative min-h-[884px] flex flex-col justify-center items-center text-center px-6 overflow-hidden">
+<!-- Decorative Elements -->
+<div class="absolute top-1/4 -left-12 opacity-10 select-none pointer-events-none">
+<span class="text-[12rem] font-display text-[#F4EFE3]"></span>
+<svg class="fill-[#C8906A] animate-pulse" height="200" viewbox="0 0 100 100" width="200">
+<path d="M50 0L55 45L100 50L55 55L50 100L45 55L0 50L45 45Z"></path>
+</svg>
+</div>
+<div class="absolute bottom-1/4 -right-12 opacity-10 select-none pointer-events-none">
+<span class="text-[20rem] font-display leading-none">*</span>
+</div>
+<div class="relative z-10 space-y-6 max-w-4xl">
+<p class="tracking-[0.15em] uppercase text-[#C8906A] text-xs font-semibold">The Portfolio of</p>
+<h1 class="text-6xl md:text-8xl font-display text-[#F4EFE3] leading-[1.1]">Full Stack Developer</h1>
+<p class="text-lg md:text-xl text-[#e6e2de]/70 max-w-2xl mx-auto font-body leading-relaxed">
+                    I build fast, scalable web products — from pixel to production.
+                </p>
+<div class="flex flex-col sm:flex-row gap-6 justify-center pt-8">
+<a class="px-8 py-4 rounded-full border border-[#C8906A] text-[#C8906A] hover:bg-[#C8906A]/10 transition-all duration-500 font-medium uppercase tracking-widest text-sm" href="#work">View Work</a>
+<a class="px-8 py-4 rounded-full text-[#F4EFE3]/60 hover:text-[#F4EFE3] transition-all duration-500 font-medium uppercase tracking-widest text-sm group" href="#contact">
+                        Get in Touch
+                        <span class="block h-px w-0 bg-[#F4EFE3] group-hover:w-full transition-all duration-500 mx-auto mt-1"></span>
+</a>
+</div>
+</div>
+<div class="absolute bottom-10 left-1/2 -translate-x-1/2 animate-bounce opacity-40">
+<span class="material-symbols-outlined">expand_more</span>
+</div>
+</section>
+<!-- About Section -->
+<section class="py-32 px-8 bg-surface-container-low" id="about">
+<div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-12 gap-16 items-start">
+<div class="md:col-span-4">
+<p class="tracking-[0.15em] uppercase text-[#C8906A] text-xs font-semibold mb-8">ABOUT ME</p>
+<span class="serif-numbers text-[120px] leading-none text-[#C8906A]/20 block">01</span>
+</div>
+<div class="md:col-span-8 space-y-12">
+<div class="space-y-8">
+<p class="text-3xl md:text-4xl font-display text-[#F4EFE3] leading-tight">
+                            Crafting digital experiences where aesthetic meets engineering excellence.
+                        </p>
+<div class="prose prose-invert max-w-none text-[#e6e2de]/70 text-lg leading-relaxed space-y-6">
+<p>Based at the intersection of design and data, I specialize in building robust full-stack applications that don't just function—they inspire. With a background rooted in both creative direction and technical architecture, I treat every codebase as a gallery piece.</p>
+<p>My approach is editorial: I curate the best technologies to solve specific problems, ensuring high performance, accessibility, and a seamless user journey from the first click to the final interaction.</p>
+</div>
+</div>
+<div class="grid grid-cols-2 gap-12 pt-12 border-t border-[#F4EFE3]/10">
+<div>
+<p class="serif-numbers text-5xl text-[#C8906A]">5+</p>
+<p class="uppercase tracking-widest text-xs mt-2 text-[#e6e2de]/50">Years Experience</p>
+</div>
+<div>
+<p class="serif-numbers text-5xl text-[#C8906A]">30+</p>
+<p class="uppercase tracking-widest text-xs mt-2 text-[#e6e2de]/50">Projects Shipped</p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Expertise / Stack Section -->
+<section class="py-32 px-8 bg-surface-dim">
+<div class="max-w-7xl mx-auto">
+<p class="tracking-[0.15em] uppercase text-[#C8906A] text-xs font-semibold mb-6">EXPERTISE</p>
+<h2 class="text-4xl md:text-5xl font-display text-[#F4EFE3] mb-16">The tools I trust.</h2>
+<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+<!-- Frontend -->
+<div class="p-8 bg-surface-container rounded-xl transition-all duration-500 hover:bg-surface-container-high group">
+<span class="material-symbols-outlined text-[#7FA88A] mb-6 text-3xl">brush</span>
+<h3 class="text-xl font-bold mb-6 text-[#F4EFE3]">Frontend</h3>
+<div class="flex flex-wrap gap-2">
+<span class="px-3 py-1 bg-surface-dim text-[#e6e2de]/60 rounded-full text-xs uppercase tracking-wider">React</span>
+<span class="px-3 py-1 bg-surface-dim text-[#e6e2de]/60 rounded-full text-xs uppercase tracking-wider">Next.js</span>
+<span class="px-3 py-1 bg-surface-dim text-[#e6e2de]/60 rounded-full text-xs uppercase tracking-wider">Tailwind</span>
+<span class="px-3 py-1 bg-surface-dim text-[#e6e2de]/60 rounded-full text-xs uppercase tracking-wider">TypeScript</span>
+</div>
+</div>
+<!-- Backend -->
+<div class="p-8 bg-surface-container rounded-xl transition-all duration-500 hover:bg-surface-container-high group">
+<span class="material-symbols-outlined text-[#C8906A] mb-6 text-3xl">terminal</span>
+<h3 class="text-xl font-bold mb-6 text-[#F4EFE3]">Backend</h3>
+<div class="flex flex-wrap gap-2">
+<span class="px-3 py-1 bg-surface-dim text-[#e6e2de]/60 rounded-full text-xs uppercase tracking-wider">Node.js</span>
+<span class="px-3 py-1 bg-surface-dim text-[#e6e2de]/60 rounded-full text-xs uppercase tracking-wider">Python</span>
+<span class="px-3 py-1 bg-surface-dim text-[#e6e2de]/60 rounded-full text-xs uppercase tracking-wider">GraphQL</span>
+<span class="px-3 py-1 bg-surface-dim text-[#e6e2de]/60 rounded-full text-xs uppercase tracking-wider">Go</span>
+</div>
+</div>
+<!-- Database -->
+<div class="p-8 bg-surface-container rounded-xl transition-all duration-500 hover:bg-surface-container-high group">
+<span class="material-symbols-outlined text-[#C4A257] mb-6 text-3xl">database</span>
+<h3 class="text-xl font-bold mb-6 text-[#F4EFE3]">Database</h3>
+<div class="flex flex-wrap gap-2">
+<span class="px-3 py-1 bg-surface-dim text-[#e6e2de]/60 rounded-full text-xs uppercase tracking-wider">PostgreSQL</span>
+<span class="px-3 py-1 bg-surface-dim text-[#e6e2de]/60 rounded-full text-xs uppercase tracking-wider">Redis</span>
+<span class="px-3 py-1 bg-surface-dim text-[#e6e2de]/60 rounded-full text-xs uppercase tracking-wider">MongoDB</span>
+</div>
+</div>
+<!-- DevOps -->
+<div class="p-8 bg-surface-container rounded-xl transition-all duration-500 hover:bg-surface-container-high group">
+<span class="material-symbols-outlined text-secondary-fixed mb-6 text-3xl">cloud</span>
+<h3 class="text-xl font-bold mb-6 text-[#F4EFE3]">DevOps</h3>
+<div class="flex flex-wrap gap-2">
+<span class="px-3 py-1 bg-surface-dim text-[#e6e2de]/60 rounded-full text-xs uppercase tracking-wider">Docker</span>
+<span class="px-3 py-1 bg-surface-dim text-[#e6e2de]/60 rounded-full text-xs uppercase tracking-wider">AWS</span>
+<span class="px-3 py-1 bg-surface-dim text-[#e6e2de]/60 rounded-full text-xs uppercase tracking-wider">CI/CD</span>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Projects Section -->
+<section class="py-32 px-8 bg-surface-container-low" id="work">
+<div class="max-w-4xl mx-auto space-y-16">
+<div class="text-center md:text-left">
+<p class="tracking-[0.15em] uppercase text-[#C8906A] text-xs font-semibold mb-6">SELECTED WORK</p>
+<h2 class="text-4xl md:text-5xl font-display text-[#F4EFE3]">Things I've built.</h2>
+</div>
+<div class="space-y-24">
+<!-- Project 1 -->
+<article class="grid grid-cols-1 gap-8 group">
+<div class="aspect-[16/9] bg-surface-container overflow-hidden rounded-lg">
+<img alt="Minimal design system preview" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105 opacity-80" data-alt="abstract geometric composition with flowing liquid shapes in muted charcoal and warm terracotta tones 3d render" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAtj-Lo3W7Vcn_qsvGv5g9asV4slhDZtnDXzsM_xOcU4kmGkX9UnL6ykfAPxJgI5rCP_E-fM_9tZjFS7T1_ztmnl_IWefCe7WX8zmZvI4M1k4pWI-AWNrKTk4utn1knBHOzVn_mEOf1YLMTmU3gjLwtts1cZAPSt1qBO7G1RUMrM-nAY-ASuu1KAbeXuogbV3Qv38FDuuUjoN47tGLplfqnyYslOnHwGGrVzLCoT9A27atg-tcOHNeK3tawkAil1OxkrqOTsYnCQHo"/>
+</div>
+<div class="space-y-6">
+<div class="flex items-center gap-4">
+<span class="serif-numbers text-2xl text-[#C8906A]">01</span>
+<h3 class="text-3xl font-display text-[#F4EFE3]">Aura Analytics Platform</h3>
+</div>
+<p class="text-[#e6e2de]/70 text-lg leading-relaxed">
+                                A high-performance dashboard for visualizing real-time financial markets. Built with focus on micro-interactions and sub-100ms latency.
+                            </p>
+<div class="flex flex-wrap gap-3">
+<span class="text-xs font-medium tracking-widest text-[#7FA88A]">REACT</span>
+<span class="text-xs font-medium tracking-widest text-[#7FA88A]">D3.JS</span>
+<span class="text-xs font-medium tracking-widest text-[#7FA88A]">NODE.JS</span>
+</div>
+<div class="flex gap-8 pt-4">
+<a class="text-sm font-bold uppercase tracking-widest text-[#F4EFE3] hover:text-[#C8906A] transition-colors border-b border-transparent hover:border-[#C8906A]" href="#">Live Demo</a>
+<a class="text-sm font-bold uppercase tracking-widest text-[#F4EFE3] hover:text-[#C8906A] transition-colors border-b border-transparent hover:border-[#C8906A]" href="#">GitHub</a>
+</div>
+</div>
+</article>
+<!-- Project 2 -->
+<article class="grid grid-cols-1 gap-8 group">
+<div class="aspect-[16/9] bg-surface-container overflow-hidden rounded-lg">
+<img alt="Clean code interface" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105 opacity-80" data-alt="minimalist desktop workspace with soft ambient lighting showing a clean coding interface and abstract art on screen" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAh3fNfYQnPvwhKKwT9Da8yGIGl3p9sioG9-sOAlFoMw4sYo_h9WRV_1uqbvZK9va9nKSIUpU0I-F-o7LuB__soiwfn29Nxz6ccQsGtwUof1xzkmRVj_FbS2bXTalvwSSo04rVDdLh7CrZAkGqkA2TDjsGLiahfTiPuCLQZLpEcoLZAMuXPsbkPi5pL_DrXsgp7wJzVA3AqBdL9FJ3_agfYX8_IpFAYWGFvOi0CyKY67ExCxW4QXAfP83eyWHWN33gwes_mda88yX0"/>
+</div>
+<div class="space-y-6">
+<div class="flex items-center gap-4">
+<span class="serif-numbers text-2xl text-[#C8906A]">02</span>
+<h3 class="text-3xl font-display text-[#F4EFE3]">Kinesis Engine</h3>
+</div>
+<p class="text-[#e6e2de]/70 text-lg leading-relaxed">
+                                Custom headless CMS architecture designed for editorial agencies. Focuses on content portability and atomic design principles.
+                            </p>
+<div class="flex flex-wrap gap-3">
+<span class="text-xs font-medium tracking-widest text-[#7FA88A]">NEXT.JS</span>
+<span class="text-xs font-medium tracking-widest text-[#7FA88A]">POSTGRES</span>
+<span class="text-xs font-medium tracking-widest text-[#7FA88A]">AWS</span>
+</div>
+<div class="flex gap-8 pt-4">
+<a class="text-sm font-bold uppercase tracking-widest text-[#F4EFE3] hover:text-[#C8906A] transition-colors border-b border-transparent hover:border-[#C8906A]" href="#">Live Demo</a>
+<a class="text-sm font-bold uppercase tracking-widest text-[#F4EFE3] hover:text-[#C8906A] transition-colors border-b border-transparent hover:border-[#C8906A]" href="#">GitHub</a>
+</div>
+</div>
+</article>
+<!-- Project 3 -->
+<article class="grid grid-cols-1 gap-8 group">
+<div class="aspect-[16/9] bg-surface-container overflow-hidden rounded-lg">
+<img alt="Mobile application mockup" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105 opacity-80" data-alt="cinematic close up of a high-end smartphone screen displaying a luxury lifestyle app with elegant typography and dark theme" src="https://lh3.googleusercontent.com/aida-public/AB6AXuA6DXCHyD6yquAlWqeq2wi5MDUWdBxte2foU6V9SylW9z4E32ezkwE9Hsbq-zDW_MPJLcfcf8cCfvBdu0B4z2uwdzw3_ozEXkV744uv-0vklKWt1PdPIJIAfvB4I1aCA2FtJi-M2rtfw9gDdiXfRtqkPkmLan01j6ubhrAlBw8N6CrEyV9Uy1yLZEiqdVBTbdXOJdLG7ShYxSGG27AepgcDnGoDJMVZtn8MirGVo_VNq2WcnEZG9eyT54z6nvpU-vWxlu9fZerQbLQ"/>
+</div>
+<div class="space-y-6">
+<div class="flex items-center gap-4">
+<span class="serif-numbers text-2xl text-[#C8906A]">03</span>
+<h3 class="text-3xl font-display text-[#F4EFE3]">Vespera Mobile</h3>
+</div>
+<p class="text-[#e6e2de]/70 text-lg leading-relaxed">
+                                A cross-platform meditation and sleep aid app featuring spatial audio integration and personalized circadian rhythm tracking.
+                            </p>
+<div class="flex flex-wrap gap-3">
+<span class="text-xs font-medium tracking-widest text-[#7FA88A]">REACT NATIVE</span>
+<span class="text-xs font-medium tracking-widest text-[#7FA88A]">TYPESCRIPT</span>
+<span class="text-xs font-medium tracking-widest text-[#7FA88A]">FIREBASE</span>
+</div>
+<div class="flex gap-8 pt-4">
+<a class="text-sm font-bold uppercase tracking-widest text-[#F4EFE3] hover:text-[#C8906A] transition-colors border-b border-transparent hover:border-[#C8906A]" href="#">App Store</a>
+<a class="text-sm font-bold uppercase tracking-widest text-[#F4EFE3] hover:text-[#C8906A] transition-colors border-b border-transparent hover:border-[#C8906A]" href="#">GitHub</a>
+</div>
+</div>
+</article>
+</div>
+</div>
+</section>
+<!-- Contact Section -->
+<section class="py-32 px-8 bg-surface-dim" id="contact">
+<div class="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-24">
+<div class="space-y-12">
+<div class="space-y-6">
+<p class="tracking-[0.15em] uppercase text-[#C8906A] text-xs font-semibold">GET IN TOUCH</p>
+<h2 class="text-5xl md:text-6xl font-display text-[#F4EFE3] leading-tight">Let's build something.</h2>
+<p class="text-[#e6e2de]/60 text-lg max-w-md leading-relaxed">
+                            Have a project in mind or just want to chat about the future of the web? Drop me a line.
+                        </p>
+</div>
+<div class="space-y-8">
+<a class="flex items-center gap-6 group" href="mailto:hello@curator.dev">
+<div class="w-12 h-12 rounded-full border border-[#F4EFE3]/10 flex items-center justify-center group-hover:border-[#C8906A] transition-colors duration-500">
+<span class="material-symbols-outlined text-sm">alternate_email</span>
+</div>
+<span class="text-lg font-body text-[#F4EFE3] tracking-wider group-hover:text-[#C8906A] transition-colors">hello@curator.dev</span>
+</a>
+<a class="flex items-center gap-6 group" href="#">
+<div class="w-12 h-12 rounded-full border border-[#F4EFE3]/10 flex items-center justify-center group-hover:border-[#C8906A] transition-colors duration-500">
+<span class="material-symbols-outlined text-sm">terminal</span>
+</div>
+<span class="text-lg font-body text-[#F4EFE3] tracking-wider group-hover:text-[#C8906A] transition-colors">github.com/curatordev</span>
+</a>
+<a class="flex items-center gap-6 group" href="#">
+<div class="w-12 h-12 rounded-full border border-[#F4EFE3]/10 flex items-center justify-center group-hover:border-[#C8906A] transition-colors duration-500">
+<span class="material-symbols-outlined text-sm">connect_without_contact</span>
+</div>
+<span class="text-lg font-body text-[#F4EFE3] tracking-wider group-hover:text-[#C8906A] transition-colors">linkedin.com/in/digitalcurator</span>
+</a>
+</div>
+</div>
+<div class="bg-surface-container p-8 md:p-12 rounded-xl">
+<form class="space-y-8">
+<div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+<div class="space-y-2">
+<label class="block text-[0.7rem] uppercase tracking-widest text-[#F4EFE3]/40">Your Name</label>
+<input class="w-full bg-surface-container-lowest border-none focus:ring-1 focus:ring-[#C8906A]/40 rounded-lg p-4 text-[#F4EFE3]" type="text"/>
+</div>
+<div class="space-y-2">
+<label class="block text-[0.7rem] uppercase tracking-widest text-[#F4EFE3]/40">Email Address</label>
+<input class="w-full bg-surface-container-lowest border-none focus:ring-1 focus:ring-[#C8906A]/40 rounded-lg p-4 text-[#F4EFE3]" type="email"/>
+</div>
+</div>
+<div class="space-y-2">
+<label class="block text-[0.7rem] uppercase tracking-widest text-[#F4EFE3]/40">Message</label>
+<textarea class="w-full bg-surface-container-lowest border-none focus:ring-1 focus:ring-[#C8906A]/40 rounded-lg p-4 text-[#F4EFE3]" rows="4"></textarea>
+</div>
+<button class="w-full py-5 bg-primary-container text-[#4c2709] font-bold uppercase tracking-[0.2em] text-xs rounded-lg hover:bg-[#f7b991] transition-all duration-500 transform active:scale-95" type="submit">Send Message</button>
+</form>
+</div>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="bg-[#141311] py-12 px-8">
+<div class="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center gap-6">
+<p class="text-[#F4EFE3]/40 text-[0.75rem] tracking-widest uppercase">© 2024 THE DIGITAL CURATOR. ALL RIGHTS RESERVED.</p>
+<div class="flex gap-8">
+<a class="text-[#F4EFE3]/40 hover:text-[#F4EFE3] transition-colors duration-400 text-[0.75rem] tracking-widest uppercase underline-offset-4 hover:underline" href="#">GITHUB</a>
+<a class="text-[#F4EFE3]/40 hover:text-[#F4EFE3] transition-colors duration-400 text-[0.75rem] tracking-widest uppercase underline-offset-4 hover:underline" href="#">LINKEDIN</a>
+<a class="text-[#F4EFE3]/40 hover:text-[#F4EFE3] transition-colors duration-400 text-[0.75rem] tracking-widest uppercase underline-offset-4 hover:underline" href="#">READCV</a>
+</div>
+</div>
+</footer>
+</body></html>
