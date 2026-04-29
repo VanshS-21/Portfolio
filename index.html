@@ -9,21 +9,23 @@
 <meta property="og:title" content="Vansh — Full-Stack Developer"/>
 <meta property="og:description" content="Building clean interfaces and solid backend systems. Open to projects and collaborations."/>
 <meta property="og:type" content="website"/>
-<meta property="og:image" content="og-image.svg"/>
+<meta property="og:image" content="og-image.png"/>
 <meta property="og:image:width" content="1200"/>
 <meta property="og:image:height" content="630"/>
 <meta property="twitter:card" content="summary_large_image"/>
 <meta property="twitter:title" content="Vansh — Full-Stack Developer"/>
 <meta property="twitter:description" content="Building clean interfaces and solid backend systems. Open to projects and collaborations."/>
-<meta property="twitter:image" content="og-image.svg"/>
+<meta property="twitter:image" content="og-image.png"/>
+<!-- Note: og-image.png should be a 1200×630 PNG export of og-image.svg.
+     SVG is not reliably rendered by Twitter/LinkedIn for link previews. -->
 <meta name="color-scheme" content="dark"/>
-<meta name="theme-color" content="#0e0d0b"/>
-<!-- Favicon -->
-<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='8' fill='%230e0d0b'/><circle cx='16' cy='16' r='5' fill='%23c8906a'/></svg>"/>
-<!-- Consolidated fonts: one request instead of two -->
+<meta name="theme-color" content="#0c0b10"/>
+<!-- Favicon — geometric neon-edge V -->
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='18' fill='%230c0b10'/%3E%3Cdefs%3E%3ClinearGradient id='g' x1='70' y1='5' x2='50' y2='95' gradientUnits='userSpaceOnUse'%3E%3Cstop offset='0%25' stop-color='%23c7d2fe'/%3E%3Cstop offset='40%25' stop-color='%23818cf8'/%3E%3Cstop offset='100%25' stop-color='%236366f1'/%3E%3C/linearGradient%3E%3Cfilter id='gl'%3E%3CfeGaussianBlur stdDeviation='2' result='b'/%3E%3CfeMerge%3E%3CfeMergeNode in='b'/%3E%3CfeMergeNode in='SourceGraphic'/%3E%3C/feMerge%3E%3C/filter%3E%3C/defs%3E%3Cpath d='M10 12 L25 12 L50 80 L38 80 Z' fill='rgba(99,102,241,0.2)'/%3E%3Cpath d='M75 12 L90 12 L62 80 L50 80 Z' fill='rgba(99,102,241,0.12)'/%3E%3Cpath d='M90 12 L62 80' stroke='url(%23g)' stroke-width='3' stroke-linecap='round' filter='url(%23gl)'/%3E%3Cpath d='M75 12 L50 80' stroke='url(%23g)' stroke-width='1.2' stroke-linecap='round' opacity='0.5'/%3E%3Cpath d='M75 12 L90 12' stroke='url(%23g)' stroke-width='2.5' stroke-linecap='round' filter='url(%23gl)'/%3E%3C/svg%3E"/>
+<!-- Fonts: Cormorant Garamond (display) + Inter (body) + JetBrains Mono (code) -->
 <link href="https://fonts.googleapis.com" rel="preconnect"/>
 <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
-<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Inter:wght@300;400;500;600&family=JetBrains+Mono:wght@300;400&family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500&family=Inter:wght@300;400;500;600&family=JetBrains+Mono:wght@300;400&family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
 <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
 <script id="tailwind-config">
   tailwind.config = {
@@ -31,29 +33,30 @@
     theme: {
       extend: {
         colors: {
-          "bg-base":        "#0e0d0b",
-          "bg-raised":      "#141210",
-          "bg-surface":     "#1a1815",
-          "bg-elevated":    "#222019",
-          "accent":         "#c8906a",
-          "accent-dim":     "#a0704e",
-          "accent-muted":   "rgba(200,144,106,0.12)",
-          "text-primary":   "#f0ebe3",
-          "text-secondary": "rgba(240,235,227,0.55)",
-          "text-tertiary":  "rgba(240,235,227,0.28)",
-          "border-subtle":  "rgba(240,235,227,0.07)",
-          "border-mid":     "rgba(240,235,227,0.12)",
-          "green-tag":      "#7fa88a",
+          "bg-base":        "#0c0b10",
+          "bg-raised":      "#100f15",
+          "bg-surface":     "#16151c",
+          "bg-elevated":    "#1d1b25",
+          "accent":         "#6366f1",
+          "accent-dim":     "#4f52d4",
+          "accent-muted":   "rgba(99,102,241,0.12)",
+          "accent-glow":    "rgba(99,102,241,0.25)",
+          "text-primary":   "#eeedf5",
+          "text-secondary": "rgba(238,237,245,0.55)",
+          "text-tertiary":  "rgba(238,237,245,0.28)",
+          "border-subtle":  "rgba(238,237,245,0.06)",
+          "border-mid":     "rgba(238,237,245,0.11)",
+          "green-tag":      "#6ee7b7",
         },
         fontFamily: {
-          display: ["DM Serif Display", "serif"],
+          display: ["Cormorant Garamond", "Georgia", "serif"],
           body:    ["Inter", "sans-serif"],
           mono:    ["JetBrains Mono", "monospace"],
         },
         borderRadius: {
-          DEFAULT: "0.75rem",
-          lg:      "1.5rem",
-          xl:      "2.5rem",
+          DEFAULT: "0.5rem",
+          lg:      "1rem",
+          xl:      "2rem",
           full:    "9999px",
         },
       },
@@ -65,6 +68,39 @@
 </head>
 
 <body class="dark bg-bg-base text-text-primary font-body overflow-x-hidden">
+
+  <!-- Page loader -->
+  <div id="page-loader" class="page-loader" aria-hidden="true">
+
+    <!-- Split panels -->
+    <div class="loader-panel loader-panel-left"></div>
+    <div class="loader-panel loader-panel-right"></div>
+
+    <!-- Content -->
+    <div class="loader-content">
+
+      <!-- Word reveal lines -->
+      <div class="loader-words">
+        <div class="loader-word-mask">
+          <span class="loader-word loader-word-1">VANSH</span>
+        </div>
+        <div class="loader-word-mask">
+          <span class="loader-word loader-word-2">DEVELOPER</span>
+        </div>
+      </div>
+
+      <!-- Counter — bottom right -->
+      <div class="loader-counter-corner">
+        <span id="loader-count" class="loader-count-num">0</span>
+        <span class="loader-count-pct">%</span>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- Custom cursor -->
+  <div id="cursor" class="custom-cursor" aria-hidden="true"></div>
+  <div id="cursor-dot" class="custom-cursor-dot" aria-hidden="true"></div>
 
   <!-- Grain overlay -->
   <div class="grain-overlay" aria-hidden="true"></div>
@@ -87,7 +123,7 @@
         <div class="terminal-input-row">
           <span class="terminal-prompt">vansh@portfolio</span><span class="terminal-separator">:</span><span class="terminal-path">~</span><span class="terminal-sym">$</span>
           <input id="terminal-input" class="terminal-input" type="text" autocomplete="off" spellcheck="false" aria-label="Terminal input"
-                 style="background-color:transparent;color:#f0ebe3;color-scheme:dark;outline:none;box-shadow:none;"/>
+                 style="background-color:transparent;color:#eeedf5;color-scheme:dark;outline:none;box-shadow:none;"/>
         </div>
       </div>
     </div>
@@ -106,7 +142,38 @@
 
       <!-- Logo -->
       <a href="#" class="flex items-center gap-2.5 group shrink-0">
-        <span class="w-1.5 h-1.5 rounded-full bg-accent group-hover:scale-150 transition-transform duration-500"></span>
+        <!-- V monogram — geometric neon edge -->
+        <svg class="nav-logo-v" width="34" height="34" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+          <defs>
+            <!-- Neon edge gradient: light violet top → indigo bottom -->
+            <linearGradient id="nav-neon-grad" x1="70" y1="5" x2="50" y2="95" gradientUnits="userSpaceOnUse">
+              <stop offset="0%" stop-color="#c7d2fe"/>
+              <stop offset="40%" stop-color="#818cf8"/>
+              <stop offset="100%" stop-color="#6366f1"/>
+            </linearGradient>
+            <!-- Glow filter -->
+            <filter id="nav-glow" x="-30%" y="-30%" width="160%" height="160%">
+              <feGaussianBlur stdDeviation="3.5" result="blur"/>
+              <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+            </filter>
+          </defs>
+
+          <!-- V body — left arm (dark fill, slight bevel) -->
+          <path d="M5 8 L20 8 L50 82 L38 82 Z" fill="rgba(99,102,241,0.28)"/>
+          <!-- V body — right arm -->
+          <path d="M80 8 L95 8 L62 82 L50 82 Z" fill="rgba(99,102,241,0.18)"/>
+
+          <!-- Neon edge — right outer edge of right arm (the lit edge) -->
+          <path d="M95 8 L62 82" stroke="url(#nav-neon-grad)" stroke-width="2.5" stroke-linecap="round" filter="url(#nav-glow)"/>
+          <!-- Neon edge — inner right arm edge -->
+          <path d="M80 8 L50 82" stroke="url(#nav-neon-grad)" stroke-width="1" stroke-linecap="round" opacity="0.6"/>
+
+          <!-- Top cap — right arm top edge -->
+          <path d="M80 8 L95 8" stroke="url(#nav-neon-grad)" stroke-width="2" stroke-linecap="round" filter="url(#nav-glow)"/>
+
+          <!-- Subtle left arm outline -->
+          <path d="M5 8 L20 8 L50 82 L38 82 Z" stroke="rgba(99,102,241,0.4)" stroke-width="0.8" fill="none"/>
+        </svg>
         <div class="flex flex-col">
           <span class="font-mono text-sm tracking-[0.2em] text-text-primary uppercase leading-tight">Vansh</span>
           <span class="font-mono text-[0.55rem] tracking-[0.15em] text-text-tertiary uppercase leading-tight hidden sm:block">Full-Stack Dev</span>
@@ -116,23 +183,23 @@
 
       <!-- Desktop links -->
       <div class="hidden md:flex gap-8 lg:gap-10 items-center">
-        <a class="nav-link" href="#about">About</a>
-        <a class="nav-link" href="#thinking">Thinking</a>
-        <a class="nav-link" href="#ai-workflow">AI</a>
-        <a class="nav-link" href="#capabilities">Work</a>
-        <a class="nav-link" href="#log">Log</a>
-        <a class="nav-link" href="#contact">Contact</a>
+        <a class="nav-link" href="#about" data-scramble>About</a>
+        <a class="nav-link" href="#thinking" data-scramble>Principles</a>
+        <a class="nav-link" href="#stack" data-scramble>Stack</a>
+        <a class="nav-link" href="#capabilities" data-scramble>Projects</a>
+        <a class="nav-link" href="#log" data-scramble>Writing</a>
+        <a class="nav-link" href="#contact" data-scramble>Contact</a>
       </div>
 
       <!-- Right actions -->
       <div class="flex items-center gap-3 sm:gap-4 shrink-0">
         <a href="#" aria-label="Download CV"
            class="hidden sm:inline-flex items-center gap-1.5 text-text-tertiary hover:text-accent font-mono text-[0.7rem] tracking-[0.15em] uppercase transition-colors duration-300">
-          <span class="material-symbols-outlined" style="font-size:1rem">download</span>
+          <span class="material-symbols-outlined icon-sm">download</span>
           CV
         </a>
         <a href="mailto:vansh.connectme@gmail.com"
-           class="hidden md:inline-flex border border-border-mid text-text-secondary px-4 py-1.5 rounded-full font-mono text-[0.7rem] tracking-[0.2em] uppercase hover:border-accent hover:text-accent transition-all duration-400">
+           class="hidden md:inline-flex btn-secondary">
           Hire me
         </a>
         <!-- Hamburger -->
@@ -152,435 +219,413 @@
   <div id="mobile-menu" class="mobile-menu" aria-hidden="true">
     <div class="mobile-menu-inner">
       <a class="mobile-nav-link" href="#about">About</a>
-      <a class="mobile-nav-link" href="#thinking">Thinking</a>
-      <a class="mobile-nav-link" href="#ai-workflow">AI</a>
-      <a class="mobile-nav-link" href="#capabilities">Work</a>
-      <a class="mobile-nav-link" href="#log">Log</a>
+      <a class="mobile-nav-link" href="#thinking">Principles</a>
+      <a class="mobile-nav-link" href="#stack">Stack</a>
+      <a class="mobile-nav-link" href="#capabilities">Projects</a>
+      <a class="mobile-nav-link" href="#log">Writing</a>
       <a class="mobile-nav-link" href="#contact">Contact</a>
       <a href="mailto:vansh.connectme@gmail.com"
-         class="mt-6 border border-border-mid text-text-secondary px-8 py-3 rounded-full font-mono text-[0.75rem] tracking-[0.2em] uppercase hover:border-accent hover:text-accent transition-all duration-400">
-        Hire me
+         class="mt-6 btn-secondary">
+        Get in touch
       </a>
     </div>
   </div>
 
-  <main class="pt-[88px]">
+  <!-- Skip link for accessibility -->
+  <a href="#main-content" class="skip-link">
+    Skip to main content
+  </a>
 
-    <!-- ─── HERO ──────────────────────────────────────────────────────── -->
-    <section class="relative min-h-[calc(100vh-88px)] flex flex-col justify-center items-center text-center px-5 sm:px-8 overflow-hidden">
+  <main class="pt-[88px]" id="main-content">
+
+    <!-- ─── HERO — Split screen ──────────────────────────────────────── -->
+    <section class="relative min-h-[calc(100vh-88px)] overflow-hidden" id="hero">
 
       <!-- Background grid -->
       <div class="hero-grid" aria-hidden="true"></div>
+      <div class="absolute inset-0 hero-glow pointer-events-none" aria-hidden="true"></div>
+      <div class="absolute top-1/4 left-1/4 w-64 h-64 rounded-full pointer-events-none orb orb-1" aria-hidden="true"></div>
+      <div class="absolute bottom-1/3 right-1/4 w-48 h-48 rounded-full pointer-events-none orb orb-2" aria-hidden="true"></div>
 
-      <!-- Glow -->
-      <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] rounded-full bg-accent/5 blur-[120px] pointer-events-none" aria-hidden="true"></div>
 
-      <div class="relative z-10 space-y-8 max-w-4xl py-16 sm:py-20" id="hero-content">
+      <div class="relative z-10 h-full min-h-[calc(100vh-88px)] grid grid-cols-1 md:grid-cols-2">
 
-        <h1 class="text-[clamp(3rem,9vw,7rem)] font-display text-text-primary leading-[1.05] tracking-tight animate-in" style="--delay:80ms">
-          Code that thinks.<br/>
-          <em class="text-accent not-italic">Interfaces that feel.</em>
-        </h1>
+        <!-- Left — headline + CTAs -->
+        <div class="flex flex-col justify-center px-8 sm:px-12 lg:px-16 py-16 lg:py-0">
+          <div class="space-y-8 max-w-xl" id="hero-content">
 
-        <p class="text-lg text-text-secondary max-w-xl mx-auto leading-relaxed font-light animate-in" style="--delay:160ms">
-          I work across the full stack — writing the logic that runs quietly in the background and the interfaces people actually enjoy using.
-          <span class="block mt-3 text-base">I don't compete with AI. I think with it.</span>
-        </p>
+            <h1 id="hero-headline" class="font-display text-text-primary leading-[0.95] tracking-tight text-hero">
+              <span class="split-line block overflow-hidden"><span class="split-inner">Code that thinks.</span></span>
+              <span class="split-line block overflow-hidden"><em class="split-inner text-accent not-italic font-medium italic">Interfaces that feel.</em></span>
+            </h1>
 
-        <div class="flex flex-col sm:flex-row gap-5 justify-center pt-4 animate-in" style="--delay:240ms">
-          <a href="#capabilities" class="btn-primary">See what I build</a>
-          <a href="#contact" class="btn-ghost">Start a conversation</a>
+            <p class="text-base text-text-secondary leading-relaxed font-light animate-in max-w-md" style="--delay:600ms">
+              Full stack — from the logic that runs quietly in the background to the interfaces people actually enjoy using.
+              <span class="block mt-3 font-display text-text-primary text-base display-italic">I don't compete with AI. I think with it.</span>
+            </p>
+
+            <div class="flex flex-wrap gap-4 animate-in" style="--delay:750ms">
+              <div class="magnetic-wrap">
+                <a href="#capabilities" class="btn-primary magnetic-btn">View my work</a>
+              </div>
+            </div>
+
+            <p class="animate-in font-mono text-[0.65rem] text-text-tertiary tracking-[0.2em] flex items-center gap-2" style="--delay:900ms">
+              <span>press <kbd class="terminal-kbd">/</kbd> to try the terminal</span>
+            </p>
+          </div>
         </div>
 
-        <!-- Item 2: Terminal hint -->
-        <p class="animate-in font-mono text-[0.6rem] text-text-tertiary tracking-[0.2em] pt-4" style="--delay:360ms">
-          press <kbd class="terminal-kbd">/</kbd> for something different
-        </p>
+        <!-- Right — animated code block -->
+        <div class="hidden md:flex flex-col justify-center px-8 md:px-12 xl:px-16 py-16 border-l border-border-subtle relative">
+          <div class="hero-code-window" style="opacity: 1; transform: none;">
+            <div class="hero-code-titlebar">
+              <div class="flex gap-1.5">
+                <span class="w-2.5 h-2.5 rounded-full bg-[#ff5f57] opacity-80"></span>
+                <span class="w-2.5 h-2.5 rounded-full bg-[#febc2e] opacity-80"></span>
+                <span class="w-2.5 h-2.5 rounded-full bg-[#28c840] opacity-80"></span>
+              </div>
+              <span class="font-mono text-[0.6rem] text-text-tertiary tracking-wider">vansh.ts</span>
+            </div>
+            <div class="hero-code-body">
+              <pre class="hero-code-pre" id="hero-code-pre"><code id="hero-code-content"></code></pre>
+            </div>
+          </div>
+
+          <!-- Vertical label -->
+          <div class="absolute right-6 top-1/2 -translate-y-1/2 -rotate-90 origin-center">
+            <span class="font-mono text-[0.55rem] tracking-[0.3em] text-text-tertiary uppercase">Full-Stack Developer</span>
+          </div>
+        </div>
+
       </div>
 
       <!-- Scroll indicator -->
-      <div class="absolute bottom-10 left-1/2 -translate-x-1/2 opacity-30">
-        <div class="scroll-line"></div>
+      <div class="scroll-indicator absolute bottom-12 left-1/2 -translate-x-1/2 flex flex-col items-center gap-4">
+        <div class="scroll-line" style="height:50px;"></div>
+        <span class="font-mono text-[0.7rem] tracking-[0.3em] text-text-primary uppercase font-medium">Scroll</span>
       </div>
     </section>
 
-    <!-- ─── ABOUT ─────────────────────────────────────────────────────── -->
-    <section class="py-16 sm:py-24 md:py-36 px-5 sm:px-8 bg-bg-raised" id="about">
-      <div class="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-12 gap-8 md:gap-16 items-start">
-
-        <div class="md:col-span-4 space-y-6" data-reveal>
-          <p class="eyebrow">About</p>
-          <span class="block font-display text-[7rem] leading-none text-accent/10 select-none">01</span>
-        </div>
-
-        <div class="md:col-span-8 space-y-10" data-reveal data-reveal-delay="100">
-          <h2 class="text-3xl sm:text-4xl md:text-5xl font-display text-text-primary leading-tight">
-            Not just writing code —<br/>
-            <em class="text-accent">understanding it.</em>
-          </h2>
-
-          <div class="space-y-6 text-text-secondary text-lg leading-relaxed font-light">
-            <p>
-              I'm Vansh, a full-stack developer with a genuine interest in how software is built end-to-end. Frontend, backend, databases — I don't pick a lane. I learn the whole road.
-            </p>
-            <p>
-              Alongside that, I've been going deeper into AI and machine learning — not as a buzzword, but because understanding how models work changes how you think about data, systems, and product decisions. It's made me a sharper developer.
-            </p>
-            <p>
-              I'm at the stage where I'm hungry, focused, and building the kind of foundation that compounds. If you're looking for someone who takes the craft seriously, we should talk.
-            </p>
-          </div>
-
-          <!-- Stats row -->
-          <div class="grid grid-cols-3 gap-8 pt-6 border-t border-border-subtle">
-            <div>
-              <p class="font-display text-3xl text-accent">CS</p>
-              <p class="text-text-tertiary text-xs uppercase tracking-widest mt-1 font-mono">Student</p>
-            </div>
-            <div>
-              <p class="font-display text-3xl text-accent">Full</p>
-              <p class="text-text-tertiary text-xs uppercase tracking-widest mt-1 font-mono">Stack</p>
-            </div>
-            <div>
-              <p class="font-display text-3xl text-accent">AI/ML</p>
-              <p class="text-text-tertiary text-xs uppercase tracking-widest mt-1 font-mono">Exploring</p>
-            </div>
-          </div>
-        </div>
-
-      </div>
-    </section>
-
-    <!-- ─── HOW I THINK ─────────────────────────────────────────────── -->
-    <section class="py-16 sm:py-24 md:py-36 px-5 sm:px-8 bg-bg-base" id="thinking">
+    <!-- ─── ABOUT — Bento Grid ───────────────────────────────────────── -->
+    <section class="py-16 sm:py-24 md:py-28 px-5 sm:px-8 bg-bg-raised diagonal-bottom" id="about">
       <div class="max-w-6xl mx-auto">
 
-        <div class="mb-10 sm:mb-16 md:mb-20" data-reveal>
-          <p class="eyebrow mb-4">How I Think</p>
-          <h2 class="text-3xl sm:text-4xl md:text-5xl font-display text-text-primary leading-tight">
-            Opinions I've earned<br/>
-            <em class="text-accent">by getting things wrong.</em>
+        <div data-reveal-stagger class="mb-10">
+          <p class="eyebrow mb-4">About</p>
+          <h2 class="font-display text-text-primary leading-tight max-w-2xl text-section-title">
+            Hungry. Focused.<br/>
+            <em class="text-accent italic">Building</em>
           </h2>
         </div>
 
-        <div class="space-y-0 divide-y divide-border-subtle">
+        <div class="bento-grid" data-reveal>
 
-          <div class="thinking-row" data-reveal data-reveal-delay="0">
-            <span class="thinking-num">01</span>
-            <div class="thinking-content">
-              <h3 class="thinking-title">Start with the problem, not the framework.</h3>
-              <p class="thinking-body">
-                Reaching for a tool before understanding the problem is how you end up with a React app that should have been a static page, or a microservice that should have been a function. I try to ask "what does this actually need to do?" before I open a terminal.
-              </p>
+          <!-- Bio card — large -->
+          <div class="bento-card bento-bio">
+            <p class="eyebrow mb-4">Who I am</p>
+            <h3 class="font-display text-text-primary leading-tight mb-6 text-subsection-title">
+              Not just writing code —<br/>
+              <em class="text-accent italic">understanding it.</em>
+            </h3>
+            <p class="text-text-secondary text-sm leading-relaxed font-light">
+              I'm Vansh, a full-stack developer with a genuine interest in how software is built end-to-end. Frontend, backend, databases — I don't pick a lane. I learn the whole road.
+            </p>
+          </div>
+
+          <!-- Status card -->
+          <div class="bento-card bento-status">
+            <div class="flex items-center gap-2 mb-4">
+              <span class="availability-dot bento-availability-dot" style="width:8px;height:8px;"></span>
+              <span class="font-mono text-[0.6rem] tracking-widest uppercase text-green-tag bento-status-text">Open to work</span>
+            </div>
+            <p class="font-display text-text-primary text-xl font-light leading-snug">Open to work &amp; collaborations</p>
+            <a href="#contact" class="mt-auto pt-6 inline-flex items-center gap-2 font-mono text-[0.65rem] tracking-widest uppercase text-accent hover:gap-3 transition-all duration-300">
+              Get in touch <span>→</span>
+            </a>
+          </div>
+
+          <!-- AI card -->
+          <div class="bento-card bento-ai">
+            <p class="eyebrow mb-3">Currently</p>
+            <p class="font-display text-text-primary leading-tight font-light text-card-title">
+              Exploring AI&nbsp;&amp;&nbsp;ML — not as a buzzword, but because it makes me a sharper developer.
+            </p>
+          </div>
+
+          <!-- Stat — Projects -->
+          <div class="bento-card bento-stat">
+            <p class="font-display text-accent leading-none stat-number">3</p>
+            <p class="font-mono text-[0.6rem] tracking-widest uppercase text-text-tertiary mt-2">Real projects</p>
+          </div>
+
+          <!-- Stat — Stack -->
+          <div class="bento-card bento-stat">
+            <p class="font-display text-accent leading-none stat-number">10</p>
+            <p class="font-mono text-[0.6rem] tracking-widest uppercase text-text-tertiary mt-2">Technologies</p>
+          </div>
+
+          <!-- GitHub card -->
+          <div class="bento-card bento-github">
+            <p class="eyebrow mb-3">Find me on</p>
+            <a href="https://github.com/VanshS-21" target="_blank" rel="noopener noreferrer"
+               class="font-mono text-sm text-text-primary hover:text-accent transition-colors tracking-wide">
+              github.com/VanshS-21
+            </a>
+            <div class="bento-github-grid mt-4" aria-hidden="true">
+              <!-- Decorative commit grid -->
+              <div class="commit-grid" id="commit-grid"></div>
             </div>
           </div>
 
-          <div class="thinking-row" data-reveal data-reveal-delay="80">
-            <span class="thinking-num">02</span>
-            <div class="thinking-content">
-              <h3 class="thinking-title">Write backend code as if the next person is having a bad day.</h3>
-              <p class="thinking-body">
-                Clear variable names, predictable function behaviour, errors that tell you what went wrong and where. Not because it's elegant — because at 2am when something breaks, you want to read code, not decode it.
-              </p>
+          <!-- Philosophy card — wide -->
+          <div class="bento-card bento-philosophy">
+            <p class="font-display text-text-primary leading-relaxed font-light text-body-lg opacity-75">
+              "The best code I'll write isn't the cleverest — it's the kind the next person can read without asking me what I meant."
+            </p>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ─── HOW I THINK — Sticky scroll ─────────────────────────────── -->
+    <section class="bg-bg-base diagonal-top" id="thinking">
+      <div class="sticky-thinking-outer">
+        <div class="sticky-thinking-sticky">
+
+          <!-- Static left panel -->
+          <div class="sticky-thinking-left">
+            <p class="eyebrow mb-6">How I Think</p>
+            <h2 class="font-display text-text-primary leading-tight text-section-title">
+              Opinions I've earned<br/>
+              <em class="text-accent italic">by getting things wrong.</em>
+            </h2>
+            <!-- Progress indicator -->
+            <div class="sticky-progress mt-10">
+              <div class="sticky-progress-track">
+                <div class="sticky-progress-fill" id="thinking-progress"></div>
+              </div>
+              <span class="sticky-progress-label font-mono text-[0.6rem] tracking-widest uppercase text-text-tertiary" id="thinking-counter">01 / 06</span>
             </div>
           </div>
 
-          <div class="thinking-row" data-reveal data-reveal-delay="160">
-            <span class="thinking-num">03</span>
-            <div class="thinking-content">
-              <h3 class="thinking-title">UI is a product decision, not a decoration layer.</h3>
-              <p class="thinking-body">
-                Every layout choice, every interaction, every piece of copy is a decision about how someone experiences your product. Treating frontend as "just making it look nice" is how you ship interfaces that work technically but fail the person using them.
-              </p>
-            </div>
-          </div>
+          <!-- Scrolling right panel -->
+          <div class="sticky-thinking-right" id="thinking-panels">
 
-          <div class="thinking-row" data-reveal data-reveal-delay="240">
-            <span class="thinking-num">04</span>
-            <div class="thinking-content">
-              <h3 class="thinking-title">Learning in public is faster than learning in private.</h3>
-              <p class="thinking-body">
-                Writing about what you're learning — even badly — forces you to understand it well enough to explain it. The feedback loop is faster, the retention is better, and occasionally someone tells you you're wrong in a way that saves you weeks.
-              </p>
+            <div class="thinking-panel" data-panel="1">
+              <div class="thinking-panel-num">01</div>
+              <h3 class="thinking-panel-title">Start with the problem, not the framework.</h3>
+              <p class="thinking-panel-body">Reaching for a tool before understanding the problem is how you end up with a React app that should have been a static page, or a microservice that should have been a function. I try to ask "what does this actually need to do?" before I open a terminal.</p>
             </div>
-          </div>
 
-          <div class="thinking-row" data-reveal data-reveal-delay="320">
-            <span class="thinking-num">05</span>
-            <div class="thinking-content">
-              <h3 class="thinking-title">AI raises the floor on execution. The ceiling is now entirely about how well you think.</h3>
-              <p class="thinking-body">
-                Anyone can generate working code in 2025. What you can't generate is the judgement to know what's worth building, the taste to know when something is wrong, and the clarity to explain a decision to someone who has to live with it. That's what I'm actually developing.
-              </p>
+            <div class="thinking-panel" data-panel="2">
+              <div class="thinking-panel-num">02</div>
+              <h3 class="thinking-panel-title">Write backend code as if the next person is having a bad day.</h3>
+              <p class="thinking-panel-body">Clear variable names, predictable function behaviour, errors that tell you what went wrong and where. Not because it's elegant — because at 2am when something breaks, you want to read code, not decode it.</p>
             </div>
-          </div>
 
+            <div class="thinking-panel" data-panel="3">
+              <div class="thinking-panel-num">03</div>
+              <h3 class="thinking-panel-title">UI is a product decision, not a decoration layer.</h3>
+              <p class="thinking-panel-body">Every layout choice, every interaction, every piece of copy is a decision about how someone experiences your product. Treating frontend as "just making it look nice" is how you ship interfaces that work technically but fail the person using them.</p>
+            </div>
+
+            <div class="thinking-panel" data-panel="4">
+              <div class="thinking-panel-num">04</div>
+              <h3 class="thinking-panel-title">Learning in public is faster than learning in private.</h3>
+              <p class="thinking-panel-body">Writing about what you're learning — even badly — forces you to understand it well enough to explain it. The feedback loop is faster, the retention is better, and occasionally someone tells you you're wrong in a way that saves you weeks.</p>
+            </div>
+
+            <div class="thinking-panel" data-panel="5">
+              <div class="thinking-panel-num">05</div>
+              <h3 class="thinking-panel-title">AI raises the floor on execution. The ceiling is now entirely about how well you think.</h3>
+              <p class="thinking-panel-body">Anyone can generate working code in 2025. What you can't generate is the judgement to know what's worth building, the taste to know when something is wrong, and the clarity to explain a decision to someone who has to live with it. That's what I'm actually developing.</p>
+            </div>
+
+            <div class="thinking-panel" data-panel="6">
+              <div class="thinking-panel-num">06</div>
+              <h3 class="thinking-panel-title">Good systems are designed before they're built.</h3>
+              <p class="thinking-panel-body">Writing code without thinking about how components fit together is how you end up rewriting everything six weeks later. Understanding client-server boundaries, data flow, and where things can fail isn't senior-level knowledge — it's the minimum for building anything that lasts.</p>
+            </div>
+
+          </div>
         </div>
       </div>
     </section>
 
     <!-- ─── STACK ─────────────────────────────────────────────────────── -->
-    <section class="py-16 sm:py-24 md:py-36 px-5 sm:px-8 bg-bg-base">
+    <section class="pt-24 pb-16 sm:pt-32 sm:pb-24 md:pt-40 md:pb-32 px-5 sm:px-8 bg-bg-base" id="stack">
       <div class="max-w-6xl mx-auto">
 
-        <div class="mb-10 sm:mb-16 md:mb-20" data-reveal>
+        <div class="mb-12 sm:mb-16" data-reveal-stagger>
           <p class="eyebrow mb-4">Stack</p>
           <h2 class="text-3xl sm:text-4xl md:text-5xl font-display text-text-primary">The tools I reach for.</h2>
         </div>
 
-        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
+        <!-- Typographic stack layout -->
+        <div class="stack-type-grid" id="stack-type-grid" data-reveal>
 
-          <div class="stack-card" data-reveal data-reveal-delay="0">
-            <div class="stack-card-icon">
-              <span class="material-symbols-outlined text-accent">layers</span>
-            </div>
-            <h3 class="text-base font-semibold text-text-primary mb-4">Frontend</h3>
-            <div class="flex flex-wrap gap-2">
-              <span class="tag">HTML / CSS</span>
-              <span class="tag">JavaScript</span>
-              <span class="tag">React</span>
-              <span class="tag">Tailwind</span>
+          <div class="stack-type-row">
+            <span class="stack-type-label">Frontend</span>
+            <div class="stack-type-items">
+              <span class="stack-type-item stack-type-lg" data-tech>HTML / CSS</span>
+              <span class="stack-type-item stack-type-xl" data-tech>JavaScript</span>
+              <span class="stack-type-item stack-type-lg" data-tech>React</span>
+              <span class="stack-type-item stack-type-md" data-tech>Tailwind</span>
             </div>
           </div>
 
-          <div class="stack-card" data-reveal data-reveal-delay="80">
-            <div class="stack-card-icon">
-              <span class="material-symbols-outlined text-accent">terminal</span>
-            </div>
-            <h3 class="text-base font-semibold text-text-primary mb-4">Backend</h3>
-            <div class="flex flex-wrap gap-2">
-              <span class="tag">Node.js</span>
-              <span class="tag">Express</span>
-              <span class="tag">Java</span>
-              <span class="tag">REST APIs</span>
+          <div class="stack-type-row">
+            <span class="stack-type-label">Backend</span>
+            <div class="stack-type-items">
+              <span class="stack-type-item stack-type-xl" data-tech>Node.js</span>
+              <span class="stack-type-item stack-type-md" data-tech>Express</span>
+              <span class="stack-type-item stack-type-lg" data-tech>Java</span>
+              <span class="stack-type-item stack-type-md" data-tech>REST APIs</span>
             </div>
           </div>
 
-          <div class="stack-card" data-reveal data-reveal-delay="160">
-            <div class="stack-card-icon">
-              <span class="material-symbols-outlined text-accent">database</span>
-            </div>
-            <h3 class="text-base font-semibold text-text-primary mb-4">Data</h3>
-            <div class="flex flex-wrap gap-2">
-              <span class="tag">MongoDB</span>
-              <span class="tag">SQL</span>
-              <span class="tag">Python</span>
-              <span class="tag">AI / ML</span>
+          <div class="stack-type-row">
+            <span class="stack-type-label">Data</span>
+            <div class="stack-type-items">
+              <span class="stack-type-item stack-type-lg" data-tech>MongoDB</span>
+              <span class="stack-type-item stack-type-md" data-tech>SQL</span>
+              <span class="stack-type-item stack-type-lg" data-tech>Python</span>
+              <span class="stack-type-item stack-type-sm" data-tech>AI / ML</span>
             </div>
           </div>
 
-          <div class="stack-card" data-reveal data-reveal-delay="240">
-            <div class="stack-card-icon">
-              <span class="material-symbols-outlined text-accent">build</span>
+          <div class="stack-type-row">
+            <span class="stack-type-label">Systems</span>
+            <div class="stack-type-items">
+              <span class="stack-type-item stack-type-md" data-tech>Client-Server</span>
+              <span class="stack-type-item stack-type-lg" data-tech>System Design</span>
+              <span class="stack-type-item stack-type-md" data-tech>SQL vs NoSQL</span>
+              <span class="stack-type-item stack-type-sm" data-tech>Caching</span>
+              <span class="stack-type-item stack-type-sm" data-tech>Load Balancing</span>
             </div>
-            <h3 class="text-base font-semibold text-text-primary mb-4">Workflow</h3>
-            <div class="flex flex-wrap gap-2">
-              <span class="tag">Git</span>
-              <span class="tag">GitHub</span>
-              <span class="tag">VS Code</span>
+          </div>
+
+          <div class="stack-type-row">
+            <span class="stack-type-label">Workflow</span>
+            <div class="stack-type-items">
+              <span class="stack-type-item stack-type-lg" data-tech>Git</span>
+              <span class="stack-type-item stack-type-xl" data-tech>GitHub</span>
+              <span class="stack-type-item stack-type-md" data-tech>VS Code</span>
+            </div>
+          </div>
+
+          <!-- AI tools — same typographic row pattern, distinct styling -->
+          <div class="stack-type-row stack-type-row-ai">
+            <span class="stack-type-label" style="color:rgba(99,102,241,0.5);">I think with</span>
+            <div class="stack-type-items">
+              <span class="stack-type-item stack-type-lg stack-type-ai-item" data-tech>Claude</span>
+              <span class="stack-type-item stack-type-md stack-type-ai-item" data-tech>ChatGPT</span>
+              <span class="stack-type-item stack-type-lg stack-type-ai-item" data-tech>Copilot</span>
+              <span class="stack-type-item stack-type-md stack-type-ai-item" data-tech>Cursor</span>
+              <span class="stack-type-item stack-type-sm stack-type-ai-item" data-tech>Kiro</span>
             </div>
           </div>
 
         </div>
 
-        <!-- AI tools row — separate, intentionally distinct from the stack -->
-        <div class="mt-8 p-6 border border-border-subtle rounded-xl" data-reveal data-reveal-delay="100">
-          <div class="flex flex-col sm:flex-row sm:items-center gap-4 sm:gap-8">
-            <p class="eyebrow shrink-0">I think with</p>
-            <div class="flex flex-wrap gap-2">
-              <span class="tag-ai">Claude</span>
-              <span class="tag-ai">ChatGPT</span>
-              <span class="tag-ai">GitHub Copilot</span>
-              <span class="tag-ai">Cursor</span>
-              <span class="tag-ai">Kiro</span>
-            </div>
-            <p class="text-text-tertiary font-mono text-[0.6rem] tracking-widest uppercase sm:ml-auto shrink-0">Not a crutch. A multiplier.</p>
-          </div>
-        </div>
+        <!-- Footnote -->
+        <p class="font-mono text-[0.58rem] tracking-[0.2em] uppercase text-text-tertiary mt-5" data-reveal>
+          System design concepts I apply in my work
+        </p>
 
       </div>
     </section>
 
-    <!-- ─── AI WORKFLOW ───────────────────────────────────────────────── -->
-    <section class="py-16 sm:py-24 md:py-36 px-5 sm:px-8 bg-bg-raised" id="ai-workflow">
-      <div class="max-w-6xl mx-auto">
-
-        <div class="mb-10 sm:mb-16 md:mb-20" data-reveal>
-          <p class="eyebrow mb-4">How I Use AI</p>
-          <h2 class="text-3xl sm:text-4xl md:text-5xl font-display text-text-primary leading-tight">
-            Not a shortcut.<br/>
-            <em class="text-accent">A way of thinking faster.</em>
-          </h2>
-        </div>
-
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-5">
-
-          <div class="ai-card" data-reveal data-reveal-delay="0">
-            <p class="ai-card-label">What I use it for</p>
-            <ul class="ai-card-list">
-              <li>Compressing the distance between idea and working prototype</li>
-              <li>Exploring tradeoffs in architecture before committing to one</li>
-              <li>Reviewing my own code for edge cases I might have missed</li>
-              <li>Understanding unfamiliar codebases or concepts faster</li>
-              <li>Generating boilerplate so I can focus on the parts that actually require judgement</li>
-            </ul>
-          </div>
-
-          <div class="ai-card" data-reveal data-reveal-delay="100">
-            <p class="ai-card-label">What I don't trust it for</p>
-            <ul class="ai-card-list">
-              <li>Deciding what's worth building in the first place</li>
-              <li>Security-sensitive logic — I always read and understand that myself</li>
-              <li>The final call on architecture — it suggests, I decide</li>
-              <li>Anything where being wrong has a real cost</li>
-              <li>Replacing the thinking that makes the output actually good</li>
-            </ul>
-          </div>
-
-        </div>
-
-        <blockquote class="mt-10 border-l-2 border-accent pl-6 py-1" data-reveal>
-          <p class="text-text-secondary text-lg leading-relaxed font-display italic">
-            "I use AI to compress the distance between idea and working code. I use my own judgement to decide if the idea was worth building in the first place."
-          </p>
-        </blockquote>
-
-      </div>
-    </section>
 
     <!-- ─── CAPABILITIES ──────────────────────────────────────────────── -->
-    <section class="py-16 sm:py-24 md:py-36 px-5 sm:px-8 bg-bg-raised" id="capabilities">
+    <section class="py-16 sm:py-24 md:py-32 px-5 sm:px-8 bg-bg-raised diagonal-top-base" id="capabilities">
       <div class="max-w-6xl mx-auto">
 
-        <div class="mb-10 sm:mb-16 md:mb-20" data-reveal>
+        <div class="mb-12 sm:mb-16" data-reveal-stagger>
           <p class="eyebrow mb-4">What I Build</p>
           <h2 class="text-3xl sm:text-4xl md:text-5xl font-display text-text-primary leading-tight">
             The kind of work<br/>I'm here to do.
           </h2>
-          <p class="text-text-secondary mt-6 max-w-lg leading-relaxed font-light">
-            No shipped products yet — but a clear sense of what I'm building toward. Each of these is a real problem space with a real approach, not a skill list dressed up as a project.
-          </p>
         </div>
 
-        <!-- Item 5: Micro case study cards -->
-        <div class="space-y-5">
+        <!-- Capability list -->
+        <div class="cap-list" data-reveal>
 
-          <div class="case-card" data-reveal data-reveal-delay="0">
-            <div class="case-card-header">
-              <span class="case-num">01</span>
-              <h3 class="case-title">Interfaces worth using</h3>
-              <div class="case-tags">
-                <span class="tag-accent">React</span>
-                <span class="tag-accent">Tailwind</span>
-                <span class="tag-accent">JS</span>
-              </div>
+          <div class="cap-item">
+            <span class="cap-num">01</span>
+            <div class="cap-content">
+              <h3 class="cap-title">Interfaces worth using</h3>
+              <p class="cap-desc">Responsive, accessible frontend work — built for the person using it, not the developer building it.</p>
             </div>
-            <div class="case-card-body">
-              <div class="case-col">
-                <p class="case-col-label">The problem</p>
-                <p class="case-col-text">Most interfaces are built for the developer's mental model, not the user's. The result is UIs that technically work but feel like work to use — confusing flows, inconsistent feedback, layouts that break on anything other than a 1440px screen.</p>
-              </div>
-              <div class="case-col">
-                <p class="case-col-label">My approach</p>
-                <p class="case-col-text">Start with the user's goal, not the component library. Build responsive from the start, not as an afterthought. Treat every interaction — hover, focus, error state — as part of the product, not a detail to polish later.</p>
-              </div>
-              <div class="case-col">
-                <p class="case-col-label">What I'd build</p>
-                <p class="case-col-text">A dashboard or data-heavy interface where the challenge isn't just displaying information, but making it scannable, actionable, and fast — even on a slow connection or a small screen.</p>
-              </div>
+            <div class="cap-tags">
+              <span class="tag-accent">React</span>
+              <span class="tag-accent">Tailwind</span>
+              <span class="tag-accent">JS</span>
             </div>
           </div>
 
-          <div class="case-card" data-reveal data-reveal-delay="60">
-            <div class="case-card-header">
-              <span class="case-num">02</span>
-              <h3 class="case-title">Systems that hold up</h3>
-              <div class="case-tags">
-                <span class="tag-accent">Node.js</span>
-                <span class="tag-accent">Express</span>
-                <span class="tag-accent">MongoDB</span>
-              </div>
+          <div class="cap-item">
+            <span class="cap-num">02</span>
+            <div class="cap-content">
+              <h3 class="cap-title">Systems that hold up</h3>
+              <p class="cap-desc">Backend architecture designed contract-first — APIs that do what they say, errors that tell you what went wrong.</p>
             </div>
-            <div class="case-card-body">
-              <div class="case-col">
-                <p class="case-col-label">The problem</p>
-                <p class="case-col-text">Backend code that works in development has a habit of failing in production in ways nobody predicted. Unhandled edge cases, brittle database queries, APIs that return different shapes depending on the mood of the server.</p>
-              </div>
-              <div class="case-col">
-                <p class="case-col-label">My approach</p>
-                <p class="case-col-text">Design APIs contract-first — know what they return before writing the logic. Handle errors explicitly, not optimistically. Keep the data layer separate from the business logic so neither becomes a liability when requirements change.</p>
-              </div>
-              <div class="case-col">
-                <p class="case-col-label">What I'd build</p>
-                <p class="case-col-text">A REST API for a real-world domain — authentication, resource management, role-based access — with clean error handling, consistent response shapes, and a structure that doesn't collapse when a new feature gets added.</p>
-              </div>
+            <div class="cap-tags">
+              <span class="tag-accent">Node.js</span>
+              <span class="tag-accent">Express</span>
+              <span class="tag-accent">MongoDB</span>
             </div>
           </div>
 
-          <div class="case-card" data-reveal data-reveal-delay="120">
-            <div class="case-card-header">
-              <span class="case-num">03</span>
-              <h3 class="case-title">Data that means something</h3>
-              <div class="case-tags">
-                <span class="tag-accent">Python</span>
-                <span class="tag-accent">AI / ML</span>
-                <span class="tag-accent">SQL</span>
-              </div>
+          <div class="cap-item">
+            <span class="cap-num">03</span>
+            <div class="cap-content">
+              <h3 class="cap-title">Data that means something</h3>
+              <p class="cap-desc">Learning to make sense of data — not just store it. Exploring ML fundamentals and how intelligent systems fit into real products.</p>
             </div>
-            <div class="case-card-body">
-              <div class="case-col">
-                <p class="case-col-label">The problem</p>
-                <p class="case-col-text">Most applications collect data and do nothing useful with it. It sits in a database, gets queried for basic reports, and never informs a single product decision. The gap between "we have data" and "we understand our users" is enormous.</p>
-              </div>
-              <div class="case-col">
-                <p class="case-col-label">My approach</p>
-                <p class="case-col-text">Currently learning the fundamentals — how models are trained, how to evaluate them honestly, and how to integrate ML outputs into a product without making the product dependent on the model being right 100% of the time.</p>
-              </div>
-              <div class="case-col">
-                <p class="case-col-label">What I'm exploring</p>
-                <p class="case-col-text">Small, focused ML experiments — classification problems, data cleaning pipelines, simple predictive models — that build intuition for what's actually hard about making data useful in a production context.</p>
-              </div>
+            <div class="cap-tags">
+              <span class="tag-accent">Python</span>
+              <span class="tag-accent">AI / ML</span>
+              <span class="tag-accent">SQL</span>
+            </div>
+          </div>
+
+          <div class="cap-item">
+            <span class="cap-num">04</span>
+            <div class="cap-content">
+              <h3 class="cap-title">Systems designed to scale</h3>
+              <p class="cap-desc">Understanding tradeoffs before writing code — client-server architecture, caching, load balancing, and when each decision matters.</p>
+            </div>
+            <div class="cap-tags">
+              <span class="tag-accent">System Design</span>
+              <span class="tag-accent">REST APIs</span>
+              <span class="tag-accent">Databases</span>
             </div>
           </div>
 
         </div>
 
-        <!-- Item 7: In-progress project card -->
-        <div class="mt-12 in-progress-card" data-reveal>
+        <!-- In-progress card -->
+        <div class="mt-10 in-progress-card" data-reveal>
           <div class="in-progress-badge">
             <span class="in-progress-dot"></span>
-            In progress
+            Currently Building
           </div>
           <div class="in-progress-body">
             <div>
-              <h3 class="text-xl font-display text-text-primary mb-2">[ Project name TBD ]</h3>
+              <h3 class="text-xl font-display text-text-primary mb-2"><em class="font-display display-italic">ML Model Evaluation Dashboard</em></h3>
               <p class="text-text-secondary text-sm leading-relaxed font-light max-w-xl">
-                <!-- TODO: Fill this in when you start your first real project.
-                     Describe what it does in one sentence, what problem it solves,
-                     and what stack you're using. Even a small utility counts. -->
-                Something I'm actively building. Details here once there's something worth showing — a real repo, a real problem, a real solution.
+                Building a web app to visualize ML model performance metrics — accuracy, precision, recall, confusion matrices. Learning how to make complex data accessible through clean UI. Python backend + React frontend.
               </p>
             </div>
             <div class="in-progress-links">
               <a href="https://github.com/VanshS-21" target="_blank" rel="noopener noreferrer" class="in-progress-link">
-                <span class="material-symbols-outlined" style="font-size:1rem">terminal</span>
+                <span class="material-symbols-outlined icon-sm">terminal</span>
                 Follow on GitHub
               </a>
             </div>
-          </div>
-        </div>
-
-        <!-- Honest note -->
-        <div class="mt-8 p-8 border border-border-subtle rounded-xl flex gap-6 items-start" data-reveal>
-          <span class="material-symbols-outlined text-accent mt-0.5 shrink-0">info</span>
-          <div>
-            <p class="text-text-primary font-medium mb-1">Currently building in public.</p>
-            <p class="text-text-secondary text-sm leading-relaxed font-light">
-              I'm at the stage where I'm learning by doing — working through real problems, building small things, and getting better every week. Follow along on
-              <a href="https://github.com/VanshS-21" target="_blank" rel="noopener noreferrer"
-                 class="text-accent hover:underline underline-offset-2 transition-colors">GitHub</a>
-              or reach out if you want to collaborate on something early-stage.
-            </p>
           </div>
         </div>
 
@@ -591,18 +636,18 @@
     <section class="py-16 sm:py-24 md:py-36 px-5 sm:px-8 bg-bg-base" id="log">
       <div class="max-w-6xl mx-auto">
 
-        <div class="mb-10 sm:mb-16 md:mb-20" data-reveal>
+        <div class="mb-10 sm:mb-16 md:mb-20" data-reveal-stagger>
           <p class="eyebrow mb-4">Learning Log</p>
           <h2 class="text-3xl sm:text-4xl md:text-5xl font-display text-text-primary leading-tight">
             What I'm figuring out,<br/>
             <em class="text-accent">week by week.</em>
           </h2>
           <p class="text-text-secondary mt-6 max-w-lg leading-relaxed font-light">
-            Not a blog. No essays. Just short, honest notes on what I'm learning and how it's changing how I think. Updated manually — no algorithm, no schedule.
+            Not a blog. No schedule. Just honest reflections on what I'm learning and how it's changing how I think — written to understand, not to publish.
           </p>
         </div>
 
-        <div class="space-y-0 divide-y divide-border-subtle" id="log-entries">
+        <div id="log-entries">
 
           <!--
           ═══════════════════════════════════════════════════════════════
@@ -611,59 +656,76 @@
           title and body text. Tags: Frontend · Backend · AI / ML · Tools
           ═══════════════════════════════════════════════════════════════
 
-          <div class="log-entry" data-reveal>
-            <div class="log-meta">
-              <span class="log-date">Mon YYYY</span>
+          <div class="log-entry-new" data-reveal>
+            <div class="log-entry-left">
+              <span class="log-entry-num">01</span>
+              <span class="log-entry-date">Mon YYYY</span>
               <span class="log-tag">Tag</span>
             </div>
-            <div class="log-body">
-              <h3 class="log-title">Your title here.</h3>
+            <div class="log-entry-right">
+              <h3 class="log-entry-title">Your title here.</h3>
               <p class="log-text">2–3 sentences. What did you learn? How did it change how you think?</p>
             </div>
           </div>
           -->
-          <div class="log-entry" data-reveal>
-            <div class="log-meta">
-              <span class="log-date">Apr 2025</span>
+
+          <div class="log-entry-new" data-reveal>
+            <div class="log-entry-left">
+              <span class="log-entry-num">01</span>
+              <span class="log-entry-date">Apr 2025</span>
               <span class="log-tag">AI / ML</span>
             </div>
-            <div class="log-body">
-              <h3 class="log-title">The difference between a model that's accurate and one that's useful.</h3>
-              <p class="log-text">
-                <!-- TODO: Write 2–3 sentences about something you actually learned this week.
-                     Keep it specific. "I learned X, and it changed how I think about Y." -->
-                High accuracy on a test set doesn't mean a model is useful in production. This week I started understanding why — distribution shift, class imbalance, the gap between what a model optimises for and what the product actually needs. It's made me more skeptical of benchmark numbers.
-              </p>
+            <div class="log-entry-right">
+              <h3 class="log-entry-title">The difference between a model that's accurate and one that's useful.</h3>
+              <p class="log-text">High accuracy on a test set doesn't mean a model is useful in production. This week I started understanding why — distribution shift, class imbalance, the gap between what a model optimises for and what the product actually needs. It's made me more skeptical of benchmark numbers.</p>
             </div>
           </div>
 
-          <!-- Entry 2 — placeholder -->
-          <div class="log-entry" data-reveal data-reveal-delay="60">
-            <div class="log-meta">
-              <span class="log-date">Mar 2025</span>
+          <div class="log-entry-new" data-reveal data-reveal-delay="60">
+            <div class="log-entry-left">
+              <span class="log-entry-num">02</span>
+              <span class="log-entry-date">Mar 2025</span>
               <span class="log-tag">Backend</span>
             </div>
-            <div class="log-body">
-              <h3 class="log-title">Why I stopped treating error handling as an afterthought.</h3>
-              <p class="log-text">
-                <!-- TODO: Replace with a real experience -->
-                I spent an afternoon debugging an Express API that was silently swallowing errors and returning 200s for failed operations. The fix was ten lines. The lesson was: explicit error handling isn't defensive programming, it's just honest programming.
-              </p>
+            <div class="log-entry-right">
+              <h3 class="log-entry-title">Why I stopped treating error handling as an afterthought.</h3>
+              <p class="log-text">I spent an afternoon debugging an Express API that was silently swallowing errors and returning 200s for failed operations. The fix was ten lines. The lesson was: explicit error handling isn't defensive programming, it's just honest programming.</p>
             </div>
           </div>
 
-          <!-- Entry 3 — placeholder -->
-          <div class="log-entry" data-reveal data-reveal-delay="120">
-            <div class="log-meta">
-              <span class="log-date">Feb 2025</span>
+          <div class="log-entry-new" data-reveal data-reveal-delay="120">
+            <div class="log-entry-left">
+              <span class="log-entry-num">03</span>
+              <span class="log-entry-date">Feb 2025</span>
               <span class="log-tag">Frontend</span>
             </div>
-            <div class="log-body">
-              <h3 class="log-title">CSS is not a styling language. It's a layout system with styling attached.</h3>
-              <p class="log-text">
-                <!-- TODO: Replace with a real experience -->
-                I used to fight CSS. Then I stopped thinking about it as "making things look right" and started thinking about it as "describing relationships between boxes." Once that clicked, Flexbox and Grid stopped feeling like magic and started feeling like logic.
-              </p>
+            <div class="log-entry-right">
+              <h3 class="log-entry-title">CSS is not a styling language. It's a layout system with styling attached.</h3>
+              <p class="log-text">I used to fight CSS. Then I stopped thinking about it as "making things look right" and started thinking about it as "describing relationships between boxes." Once that clicked, Flexbox and Grid stopped feeling like magic and started feeling like logic.</p>
+            </div>
+          </div>
+
+          <div class="log-entry-new" data-reveal data-reveal-delay="180">
+            <div class="log-entry-left">
+              <span class="log-entry-num">04</span>
+              <span class="log-entry-date">Jan 2025</span>
+              <span class="log-tag">Backend</span>
+            </div>
+            <div class="log-entry-right">
+              <h3 class="log-entry-title">Why database indexes matter more than I thought.</h3>
+              <p class="log-text">A query that took 2 seconds dropped to 40ms after adding a single index. The lesson: understanding how databases actually retrieve data isn't optional knowledge — it's the difference between a feature that works and one that scales.</p>
+            </div>
+          </div>
+
+          <div class="log-entry-new" data-reveal data-reveal-delay="240">
+            <div class="log-entry-left">
+              <span class="log-entry-num">05</span>
+              <span class="log-entry-date">Dec 2024</span>
+              <span class="log-tag">Tools</span>
+            </div>
+            <div class="log-entry-right">
+              <h3 class="log-entry-title">Git is a time machine, not just a backup tool.</h3>
+              <p class="log-text">I used to commit everything at once with vague messages. Now I commit small, logical changes with clear intent. The difference: when something breaks, I can pinpoint exactly what changed and why. Future me is grateful.</p>
             </div>
           </div>
 
@@ -675,10 +737,21 @@
     </section>
 
     <!-- ─── CONTACT ───────────────────────────────────────────────────── -->
-    <section class="py-16 sm:py-24 md:py-36 px-5 sm:px-8 bg-bg-base" id="contact">
-      <div class="max-w-6xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-24">
+    <section class="py-16 sm:py-24 md:py-36 px-5 sm:px-8 bg-bg-base relative overflow-hidden contact-section" id="contact">
 
-        <div class="space-y-12" data-reveal>
+      <!-- SVG crosshair decoration -->
+      <svg class="contact-svg-deco" viewBox="0 0 400 400" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+        <circle cx="200" cy="200" r="160" stroke="rgba(99,102,241,0.05)" stroke-width="1"/>
+        <circle cx="200" cy="200" r="100" stroke="rgba(99,102,241,0.04)" stroke-width="1"/>
+        <circle cx="200" cy="200" r="40" stroke="rgba(99,102,241,0.06)" stroke-width="1"/>
+        <line x1="200" y1="0" x2="200" y2="400" stroke="rgba(99,102,241,0.04)" stroke-width="1"/>
+        <line x1="0" y1="200" x2="400" y2="200" stroke="rgba(99,102,241,0.04)" stroke-width="1"/>
+        <circle cx="200" cy="200" r="4" fill="rgba(99,102,241,0.15)"/>
+      </svg>
+
+      <div class="max-w-6xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-24 relative z-10">
+
+        <div class="space-y-12" data-reveal-stagger>
           <div class="space-y-6">
             <p class="eyebrow">Contact</p>
             <h2 class="text-4xl sm:text-5xl md:text-6xl font-display text-text-primary leading-[1.1]">
@@ -686,7 +759,7 @@
               <em class="text-accent">something real.</em>
             </h2>
             <p class="text-text-secondary text-lg max-w-sm leading-relaxed font-light">
-              Whether it's a project, a collaboration, or just a conversation about what you're building — I'm listening.
+              Whether it's a project, a collaboration, or just a conversation about what you're building — I'm listening. I typically respond within 24 hours.
             </p>
           </div>
 
@@ -715,24 +788,24 @@
         </div>
 
         <!-- Form -->
-        <div class="bg-bg-surface border border-border-subtle p-8 md:p-12 rounded-xl" style="border-color: rgba(240,235,227,0.04);" data-reveal data-reveal-delay="150">
+        <div class="bg-bg-surface border border-border-subtle p-8 md:p-12 rounded-xl" style="border-color: rgba(238,237,245,0.04);" data-reveal data-reveal-delay="150">
           <form class="space-y-7" id="contact-form" style="color-scheme: dark;">
             <div class="grid grid-cols-1 md:grid-cols-2 gap-7">
               <div class="form-group">
                 <label class="form-label" for="input-name">Name</label>
                 <input class="form-input" id="input-name" type="text" name="name" placeholder="Your name" required
-                       style="background-color:#1a1815;color:#f0ebe3;"/>
+                       style="background-color:#16151c;color:#eeedf5;outline:none;border:1px solid rgba(238,237,245,0.08);box-shadow:none;"/>
               </div>
               <div class="form-group">
                 <label class="form-label" for="input-email">Email</label>
                 <input class="form-input" id="input-email" type="email" name="email" placeholder="your@email.com" required
-                       style="background-color:#1a1815;color:#f0ebe3;"/>
+                       style="background-color:#16151c;color:#eeedf5;outline:none;border:1px solid rgba(238,237,245,0.08);box-shadow:none;"/>
               </div>
             </div>
             <div class="form-group">
               <label class="form-label" for="input-message">Message</label>
               <textarea class="form-input resize-none" id="input-message" name="message" rows="5" placeholder="What's on your mind?" maxlength="2000" required
-                        style="background-color:#1a1815;color:#f0ebe3;"></textarea>
+                        style="background-color:#16151c;color:#eeedf5;outline:none;border:1px solid rgba(238,237,245,0.08);box-shadow:none;"></textarea>
             </div>
             <button class="btn-submit" type="submit">Send message</button>
           </form>
@@ -744,14 +817,71 @@
   </main>
 
   <!-- ─── FOOTER ────────────────────────────────────────────────────── -->
-  <footer class="bg-bg-raised border-t border-border-subtle py-10 px-5 sm:px-8">
-    <div class="max-w-6xl mx-auto flex flex-col md:flex-row justify-between items-center gap-4">
-      <p class="font-mono text-text-tertiary text-[0.75rem] tracking-[0.2em] uppercase">© <span id="footer-year"></span> Vansh. All rights reserved.</p>
-      <div class="flex gap-8">
-        <a class="footer-link" href="https://github.com/VanshS-21" target="_blank" rel="noopener noreferrer">GitHub</a>
-        <a class="footer-link" href="https://www.linkedin.com/in/vanshsahu21/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
-        <a class="footer-link" href="mailto:vansh.connectme@gmail.com">Email</a>
+  <footer class="footer-redesign px-5 sm:px-8">
+    <div class="max-w-6xl mx-auto">
+
+      <!-- Top row — tagline + links -->
+      <div class="footer-top">
+        <div class="footer-tagline">
+          <span class="font-display italic text-text-secondary text-subsection-title tracking-tight">
+            Code that thinks.
+          </span>
+          <span class="font-display italic text-accent text-subsection-title tracking-tight">
+            Interfaces that feel.
+          </span>
+        </div>
+
+        <div class="footer-links-col">
+          <p class="eyebrow mb-4">Find me</p>
+          <div class="flex flex-col gap-3">
+            <a class="footer-link-new" href="https://github.com/VanshS-21" target="_blank" rel="noopener noreferrer">
+              <span>GitHub</span>
+              <span class="footer-link-arrow">↗</span>
+            </a>
+            <a class="footer-link-new" href="https://www.linkedin.com/in/vanshsahu21/" target="_blank" rel="noopener noreferrer">
+              <span>LinkedIn</span>
+              <span class="footer-link-arrow">↗</span>
+            </a>
+            <a class="footer-link-new" href="mailto:vansh.connectme@gmail.com">
+              <span>Email</span>
+              <span class="footer-link-arrow">↗</span>
+            </a>
+          </div>
+        </div>
       </div>
+
+      <!-- Divider -->
+      <div class="footer-divider"></div>
+
+      <!-- Bottom row — V mark + copyright -->
+      <div class="footer-bottom">
+        <svg width="28" height="28" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" class="opacity-40">
+          <defs>
+            <linearGradient id="footer-neon-grad" x1="70" y1="5" x2="50" y2="95" gradientUnits="userSpaceOnUse">
+              <stop offset="0%" stop-color="#c7d2fe"/>
+              <stop offset="40%" stop-color="#818cf8"/>
+              <stop offset="100%" stop-color="#6366f1"/>
+            </linearGradient>
+            <filter id="footer-glow" x="-30%" y="-30%" width="160%" height="160%">
+              <feGaussianBlur stdDeviation="3.5" result="blur"/>
+              <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+            </filter>
+          </defs>
+          <path d="M5 8 L20 8 L50 82 L38 82 Z" fill="rgba(99,102,241,0.18)"/>
+          <path d="M80 8 L95 8 L62 82 L50 82 Z" fill="rgba(99,102,241,0.10)"/>
+          <path d="M95 8 L62 82" stroke="url(#footer-neon-grad)" stroke-width="2.5" stroke-linecap="round" filter="url(#footer-glow)"/>
+          <path d="M80 8 L50 82" stroke="url(#footer-neon-grad)" stroke-width="1" stroke-linecap="round" opacity="0.5"/>
+          <path d="M80 8 L95 8" stroke="url(#footer-neon-grad)" stroke-width="2" stroke-linecap="round" filter="url(#footer-glow)"/>
+          <path d="M5 8 L20 8 L50 82 L38 82 Z" stroke="rgba(99,102,241,0.25)" stroke-width="0.8" fill="none"/>
+        </svg>
+        <p class="font-mono text-text-tertiary text-[0.65rem] tracking-[0.2em] uppercase">
+          © <span id="footer-year"></span> Vansh. All rights reserved.
+        </p>
+        <p class="font-mono text-text-tertiary text-[0.65rem] tracking-[0.2em] uppercase">
+          Designed & built by Vansh
+        </p>
+      </div>
+
     </div>
   </footer>
 
@@ -760,7 +890,7 @@
     <style>
       [data-reveal] { opacity: 1 !important; transform: none !important; }
       .animate-in   { opacity: 1 !important; transform: none !important; animation: none !important; }
-      #ticker-track::before { content: 'Currently learning: ML · React · Node.js · SQL'; font-family: monospace; font-size: 0.6rem; letter-spacing: 0.15em; text-transform: uppercase; color: rgba(200,144,106,0.6); padding: 0 2rem; }
+      #ticker-track::before { content: 'Currently learning: ML · React · Node.js · SQL'; font-family: monospace; font-size: 0.6rem; letter-spacing: 0.15em; text-transform: uppercase; color: rgba(99,102,241,0.6); padding: 0 2rem; }
       .terminal-kbd { display: none; }
     </style>
   </noscript>
