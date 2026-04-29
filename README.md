@@ -1,32 +1,64 @@
-# Full Stack Developer Portfolio
+# vansh.dev — Personal Portfolio
 
-Welcome to my personal portfolio repository! 
+A handcrafted, single-page portfolio built with vanilla HTML, CSS, and JavaScript. No frameworks, no build tools, no dependencies — just deliberate code.
 
-This is a premium, single-page, scroll-based portfolio designed with a "Dark Luxury Editorial" aesthetic. It emphasizes clean engineering, performance, and high-end visual design.
+## What's in here
 
-## 🚀 Features
+| File | Purpose |
+|------|---------|
+| `index.html` | Structure, content, and Tailwind config |
+| `index.css` | Design system, animations, responsive layout |
+| `script.js` | Scroll reveal, terminal easter egg, ticker, form handling |
+| `og-image.svg` | Open Graph image for link previews |
+| `robots.txt` | Crawler directives |
+| `sitemap.xml` | Site map (update domain before deploying) |
 
-- **Dark Luxury Editorial Aesthetic:** Warm-tinted near-black surfaces (`#0D0C0A` base) paired with cream typography and elegant accents.
-- **Fluid Typography & Layout:** Built to scale beautifully across all screen sizes using responsive clamp functions and grid layouts.
-- **Scroll Interactions:** Smooth, staggered fade-up animations powered by the `IntersectionObserver` API.
-- **Glassmorphism:** A fixed, blur-effect top navigation for a modern, sleek touch.
-- **Vanilla Setup:** Zero dependencies. Built purely with HTML5, CSS3, and Vanilla JavaScript. Tailwind CSS is utilized via CDN for rapid styling adjustments.
+## Stack
 
-## 🛠️ Stack Overview
+- **HTML5** — semantic, accessible markup
+- **CSS3** — custom properties, grid, flexbox, keyframe animations
+- **Vanilla JS** — IntersectionObserver, terminal emulator, command history
+- **Tailwind CSS** — via CDN for utility classes
+- **Google Fonts** — Cormorant Garamond, JetBrains Mono (single consolidated request)
 
-- **HTML5** (Semantic structuring)
-- **CSS3 / Tailwind CSS** (Custom properties, grid, flexbox, animations)
-- **Vanilla JavaScript** (DOM manipulation, scroll observation, form handling)
+## Features
 
-## 📂 Project Structure
+- Terminal easter egg — press `/` or `` ` `` anywhere on the page
+- Command history (↑/↓) and tab completion in the terminal
+- Availability status indicator (update `STATUS` in `script.js`)
+- Currently learning ticker — edit `tickerItems` array in `script.js`
+- Scroll-reveal animations with staggered delays
+- Fully responsive — tested down to 320px
+- Keyboard navigation with custom `focus-visible` styles
+- Contact form wired for Formspree (replace `YOUR_FORM_ID` in `script.js`)
+- `noscript` fallback for JS-disabled environments
 
-- `index.html` — The main layout, sections, and Tailwind CDN configuration.
-- `index.css` — Custom animations, global resets, and accessibility overrides.
-- `script.js` — Logic for scroll-reveal animations and form submission simulation.
+## Running locally
 
-## 💻 Local Development
+No build step required. Open `index.html` directly or use Live Server in VS Code.
 
-To run this locally, you don't need any build tools. Simply open `index.html` in your web browser or use an extension like VS Code Live Server.
+```bash
+# If you have a simple HTTP server available
+npx serve .
+```
+
+## Before deploying
+
+- [ ] Replace `YOUR_FORM_ID` in `script.js` with your Formspree ID
+- [ ] Add your CV file and update the CV link `href` in the nav
+- [ ] Update `yourdomain.com` in `robots.txt` and `sitemap.xml`
+- [ ] Convert `og-image.svg` to PNG for broader social platform support
+- [ ] Replace placeholder log entries with real content
+- [ ] Update `tickerItems` in `script.js` with what you're actually learning
+
+## Customising availability status
+
+In `script.js`, change the `STATUS` variable near the top:
+
+```js
+const STATUS = 'available'; // 'available' | 'selective' | 'unavailable'
+```
 
 ---
-*Designed and built with intent.*
+
+Built by Vansh. No templates. No shortcuts.

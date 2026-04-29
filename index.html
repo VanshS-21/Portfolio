@@ -1,370 +1,769 @@
 <!DOCTYPE html>
-
-<html class="dark" lang="en"><head>
+<html class="dark" lang="en" dir="ltr">
+<head>
 <meta charset="utf-8"/>
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-<title>Vansh | Software Developer Portfolio</title>
+<title>Vansh — Full-Stack Developer</title>
+<meta name="description" content="Vansh is a full-stack developer who builds clean interfaces and solid backend systems. Currently exploring AI/ML. Open to projects and collaborations."/>
+<meta name="author" content="Vansh"/>
+<meta property="og:title" content="Vansh — Full-Stack Developer"/>
+<meta property="og:description" content="Building clean interfaces and solid backend systems. Open to projects and collaborations."/>
+<meta property="og:type" content="website"/>
+<meta property="og:image" content="og-image.svg"/>
+<meta property="og:image:width" content="1200"/>
+<meta property="og:image:height" content="630"/>
+<meta property="twitter:card" content="summary_large_image"/>
+<meta property="twitter:title" content="Vansh — Full-Stack Developer"/>
+<meta property="twitter:description" content="Building clean interfaces and solid backend systems. Open to projects and collaborations."/>
+<meta property="twitter:image" content="og-image.svg"/>
+<meta name="color-scheme" content="dark"/>
+<meta name="theme-color" content="#0e0d0b"/>
+<!-- Favicon -->
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='8' fill='%230e0d0b'/><circle cx='16' cy='16' r='5' fill='%23c8906a'/></svg>"/>
+<!-- Consolidated fonts: one request instead of two -->
 <link href="https://fonts.googleapis.com" rel="preconnect"/>
 <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
-<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&amp;family=Inter:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet"/>
-<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
-<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Inter:wght@300;400;500;600&family=JetBrains+Mono:wght@300;400&family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
 <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
 <script id="tailwind-config">
-        tailwind.config = {
-          darkMode: "class",
-          theme: {
-            extend: {
-              "colors": {
-                      "error-container": "#93000a",
-                      "surface-tint": "#f7b991",
-                      "inverse-surface": "#e6e2de",
-                      "on-tertiary-fixed-variant": "#5b4300",
-                      "on-secondary-fixed": "#00210f",
-                      "primary-fixed-dim": "#f7b991",
-                      "surface-container-high": "#2b2a27",
-                      "secondary-fixed": "#c2edcc",
-                      "secondary": "#a6d1b1",
-                      "on-primary-container": "#502a0c",
-                      "secondary-container": "#2b5138",
-                      "on-primary": "#4c2709",
-                      "on-secondary-fixed-variant": "#284e36",
-                      "tertiary-container": "#b9984e",
-                      "surface-container-lowest": "#0f0e0c",
-                      "outline": "#9e8d84",
-                      "on-secondary": "#103721",
-                      "on-error-container": "#ffdad6",
-                      "on-tertiary": "#3f2e00",
-                      "primary-container": "#c8906a",
-                      "tertiary-fixed-dim": "#e6c273",
-                      "surface-dim": "#141311",
-                      "surface-container-highest": "#363432",
-                      "primary-fixed": "#ffdcc6",
-                      "on-primary-fixed": "#301400",
-                      "background": "#141311",
-                      "on-tertiary-container": "#443100",
-                      "tertiary-fixed": "#ffdf9d",
-                      "inverse-primary": "#825432",
-                      "surface-container": "#211f1d",
-                      "on-primary-fixed-variant": "#673d1d",
-                      "on-tertiary-fixed": "#251a00",
-                      "surface-container-low": "#1d1b19",
-                      "tertiary": "#e6c273",
-                      "on-secondary-container": "#98c2a3",
-                      "on-background": "#e6e2de",
-                      "surface-variant": "#363432",
-                      "error": "#ffb4ab",
-                      "on-surface-variant": "#d6c3b8",
-                      "inverse-on-surface": "#32302e",
-                      "outline-variant": "#51443c",
-                      "on-surface": "#e6e2de",
-                      "surface": "#141311",
-                      "secondary-fixed-dim": "#a6d1b1",
-                      "primary": "#f7b991",
-                      "on-error": "#690005",
-                      "surface-bright": "#3b3936"
-              },
-              "borderRadius": {
-                      "DEFAULT": "1rem",
-                      "lg": "2rem",
-                      "xl": "3rem",
-                      "full": "9999px"
-              },
-              "fontFamily": {
-                      "headline": ["DM Serif Display", "serif"],
-                      "display": ["DM Serif Display", "serif"],
-                      "body": ["Inter", "sans-serif"],
-                      "label": ["Inter", "sans-serif"]
-              }
-            },
-          },
-        }
-    </script>
-<style>
-        body {
-            background-color: #141311;
-            color: #e6e2de;
-            font-family: 'Inter', sans-serif;
-            overflow-x: hidden;
-        }
-        .material-symbols-outlined {
-            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
-        }
-        .serif-numbers {
-            font-family: 'DM Serif Display', serif;
-        }
-        .glass-nav {
-            background-color: rgba(33, 31, 29, 0.7);
-            backdrop-filter: blur(20px);
-        }
+  tailwind.config = {
+    darkMode: "class",
+    theme: {
+      extend: {
+        colors: {
+          "bg-base":        "#0e0d0b",
+          "bg-raised":      "#141210",
+          "bg-surface":     "#1a1815",
+          "bg-elevated":    "#222019",
+          "accent":         "#c8906a",
+          "accent-dim":     "#a0704e",
+          "accent-muted":   "rgba(200,144,106,0.12)",
+          "text-primary":   "#f0ebe3",
+          "text-secondary": "rgba(240,235,227,0.55)",
+          "text-tertiary":  "rgba(240,235,227,0.28)",
+          "border-subtle":  "rgba(240,235,227,0.07)",
+          "border-mid":     "rgba(240,235,227,0.12)",
+          "green-tag":      "#7fa88a",
+        },
+        fontFamily: {
+          display: ["DM Serif Display", "serif"],
+          body:    ["Inter", "sans-serif"],
+          mono:    ["JetBrains Mono", "monospace"],
+        },
+        borderRadius: {
+          DEFAULT: "0.75rem",
+          lg:      "1.5rem",
+          xl:      "2.5rem",
+          full:    "9999px",
+        },
+      },
+    },
+  }
+</script>
+<link rel="stylesheet" href="index.css"/>
+<script src="script.js" defer></script>
+</head>
+
+<body class="dark bg-bg-base text-text-primary font-body overflow-x-hidden">
+
+  <!-- Grain overlay -->
+  <div class="grain-overlay" aria-hidden="true"></div>
+
+  <!-- ─── TERMINAL EASTER EGG ──────────────────────────────────────────── -->
+  <div id="terminal-overlay" class="terminal-overlay" aria-hidden="true" role="dialog" aria-label="Developer terminal">
+    <div class="terminal-window">
+      <div class="terminal-titlebar">
+        <div class="terminal-dots">
+          <span class="terminal-dot bg-[#ff5f57]"></span>
+          <span class="terminal-dot bg-[#febc2e]"></span>
+          <span class="terminal-dot bg-[#28c840]"></span>
+        </div>
+        <span class="terminal-title">vansh@portfolio ~ </span>
+        <button id="terminal-close" class="terminal-close-btn" aria-label="Close terminal">✕</button>
+      </div>
+      <div class="terminal-body" id="terminal-body">
+        <div class="terminal-output" id="terminal-output">
+      </div>
+        <div class="terminal-input-row">
+          <span class="terminal-prompt">vansh@portfolio</span><span class="terminal-separator">:</span><span class="terminal-path">~</span><span class="terminal-sym">$</span>
+          <input id="terminal-input" class="terminal-input" type="text" autocomplete="off" spellcheck="false" aria-label="Terminal input"
+                 style="background-color:transparent;color:#f0ebe3;color-scheme:dark;outline:none;box-shadow:none;"/>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ─── NAV ─────────────────────────────────────────────────────────── -->
+  <nav class="fixed top-0 z-50 w-full glass-nav" aria-label="Main navigation">
+
+    <!-- Ticker strip -->
+    <div class="ticker-strip" aria-label="Currently learning">
+      <div class="ticker-track" id="ticker-track"></div>
+    </div>
+
+    <!-- Nav bar -->
+    <div class="px-5 sm:px-8 py-4 flex justify-between items-center">
+
+      <!-- Logo -->
+      <a href="#" class="flex items-center gap-2.5 group shrink-0">
+        <span class="w-1.5 h-1.5 rounded-full bg-accent group-hover:scale-150 transition-transform duration-500"></span>
+        <div class="flex flex-col">
+          <span class="font-mono text-sm tracking-[0.2em] text-text-primary uppercase leading-tight">Vansh</span>
+          <span class="font-mono text-[0.55rem] tracking-[0.15em] text-text-tertiary uppercase leading-tight hidden sm:block">Full-Stack Dev</span>
+        </div>
+        <span class="availability-dot" id="availability-dot" title="Open to work"></span>
+      </a>
+
+      <!-- Desktop links -->
+      <div class="hidden md:flex gap-8 lg:gap-10 items-center">
+        <a class="nav-link" href="#about">About</a>
+        <a class="nav-link" href="#thinking">Thinking</a>
+        <a class="nav-link" href="#ai-workflow">AI</a>
+        <a class="nav-link" href="#capabilities">Work</a>
+        <a class="nav-link" href="#log">Log</a>
+        <a class="nav-link" href="#contact">Contact</a>
+      </div>
+
+      <!-- Right actions -->
+      <div class="flex items-center gap-3 sm:gap-4 shrink-0">
+        <a href="#" aria-label="Download CV"
+           class="hidden sm:inline-flex items-center gap-1.5 text-text-tertiary hover:text-accent font-mono text-[0.7rem] tracking-[0.15em] uppercase transition-colors duration-300">
+          <span class="material-symbols-outlined" style="font-size:1rem">download</span>
+          CV
+        </a>
+        <a href="mailto:vansh.connectme@gmail.com"
+           class="hidden md:inline-flex border border-border-mid text-text-secondary px-4 py-1.5 rounded-full font-mono text-[0.7rem] tracking-[0.2em] uppercase hover:border-accent hover:text-accent transition-all duration-400">
+          Hire me
+        </a>
+        <!-- Hamburger -->
+        <button id="mobile-menu-btn" aria-label="Open menu" aria-expanded="false"
+                class="md:hidden flex flex-col justify-center gap-[5px] w-8 h-8 p-1">
+          <span class="hamburger-bar"></span>
+          <span class="hamburger-bar"></span>
+          <span class="hamburger-bar" style="width:75%"></span>
+        </button>
+      </div>
+
+    </div><!-- end nav bar -->
+
+  </nav>
+
+  <!-- Mobile menu — outside nav, full-screen overlay -->
+  <div id="mobile-menu" class="mobile-menu" aria-hidden="true">
+    <div class="mobile-menu-inner">
+      <a class="mobile-nav-link" href="#about">About</a>
+      <a class="mobile-nav-link" href="#thinking">Thinking</a>
+      <a class="mobile-nav-link" href="#ai-workflow">AI</a>
+      <a class="mobile-nav-link" href="#capabilities">Work</a>
+      <a class="mobile-nav-link" href="#log">Log</a>
+      <a class="mobile-nav-link" href="#contact">Contact</a>
+      <a href="mailto:vansh.connectme@gmail.com"
+         class="mt-6 border border-border-mid text-text-secondary px-8 py-3 rounded-full font-mono text-[0.75rem] tracking-[0.2em] uppercase hover:border-accent hover:text-accent transition-all duration-400">
+        Hire me
+      </a>
+    </div>
+  </div>
+
+  <main class="pt-[88px]">
+
+    <!-- ─── HERO ──────────────────────────────────────────────────────── -->
+    <section class="relative min-h-[calc(100vh-88px)] flex flex-col justify-center items-center text-center px-5 sm:px-8 overflow-hidden">
+
+      <!-- Background grid -->
+      <div class="hero-grid" aria-hidden="true"></div>
+
+      <!-- Glow -->
+      <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] rounded-full bg-accent/5 blur-[120px] pointer-events-none" aria-hidden="true"></div>
+
+      <div class="relative z-10 space-y-8 max-w-4xl py-16 sm:py-20" id="hero-content">
+
+        <h1 class="text-[clamp(3rem,9vw,7rem)] font-display text-text-primary leading-[1.05] tracking-tight animate-in" style="--delay:80ms">
+          Code that thinks.<br/>
+          <em class="text-accent not-italic">Interfaces that feel.</em>
+        </h1>
+
+        <p class="text-lg text-text-secondary max-w-xl mx-auto leading-relaxed font-light animate-in" style="--delay:160ms">
+          I work across the full stack — writing the logic that runs quietly in the background and the interfaces people actually enjoy using.
+          <span class="block mt-3 text-base">I don't compete with AI. I think with it.</span>
+        </p>
+
+        <div class="flex flex-col sm:flex-row gap-5 justify-center pt-4 animate-in" style="--delay:240ms">
+          <a href="#capabilities" class="btn-primary">See what I build</a>
+          <a href="#contact" class="btn-ghost">Start a conversation</a>
+        </div>
+
+        <!-- Item 2: Terminal hint -->
+        <p class="animate-in font-mono text-[0.6rem] text-text-tertiary tracking-[0.2em] pt-4" style="--delay:360ms">
+          press <kbd class="terminal-kbd">/</kbd> for something different
+        </p>
+      </div>
+
+      <!-- Scroll indicator -->
+      <div class="absolute bottom-10 left-1/2 -translate-x-1/2 opacity-30">
+        <div class="scroll-line"></div>
+      </div>
+    </section>
+
+    <!-- ─── ABOUT ─────────────────────────────────────────────────────── -->
+    <section class="py-16 sm:py-24 md:py-36 px-5 sm:px-8 bg-bg-raised" id="about">
+      <div class="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-12 gap-8 md:gap-16 items-start">
+
+        <div class="md:col-span-4 space-y-6" data-reveal>
+          <p class="eyebrow">About</p>
+          <span class="block font-display text-[7rem] leading-none text-accent/10 select-none">01</span>
+        </div>
+
+        <div class="md:col-span-8 space-y-10" data-reveal data-reveal-delay="100">
+          <h2 class="text-3xl sm:text-4xl md:text-5xl font-display text-text-primary leading-tight">
+            Not just writing code —<br/>
+            <em class="text-accent">understanding it.</em>
+          </h2>
+
+          <div class="space-y-6 text-text-secondary text-lg leading-relaxed font-light">
+            <p>
+              I'm Vansh, a full-stack developer with a genuine interest in how software is built end-to-end. Frontend, backend, databases — I don't pick a lane. I learn the whole road.
+            </p>
+            <p>
+              Alongside that, I've been going deeper into AI and machine learning — not as a buzzword, but because understanding how models work changes how you think about data, systems, and product decisions. It's made me a sharper developer.
+            </p>
+            <p>
+              I'm at the stage where I'm hungry, focused, and building the kind of foundation that compounds. If you're looking for someone who takes the craft seriously, we should talk.
+            </p>
+          </div>
+
+          <!-- Stats row -->
+          <div class="grid grid-cols-3 gap-8 pt-6 border-t border-border-subtle">
+            <div>
+              <p class="font-display text-3xl text-accent">CS</p>
+              <p class="text-text-tertiary text-xs uppercase tracking-widest mt-1 font-mono">Student</p>
+            </div>
+            <div>
+              <p class="font-display text-3xl text-accent">Full</p>
+              <p class="text-text-tertiary text-xs uppercase tracking-widest mt-1 font-mono">Stack</p>
+            </div>
+            <div>
+              <p class="font-display text-3xl text-accent">AI/ML</p>
+              <p class="text-text-tertiary text-xs uppercase tracking-widest mt-1 font-mono">Exploring</p>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ─── HOW I THINK ─────────────────────────────────────────────── -->
+    <section class="py-16 sm:py-24 md:py-36 px-5 sm:px-8 bg-bg-base" id="thinking">
+      <div class="max-w-6xl mx-auto">
+
+        <div class="mb-10 sm:mb-16 md:mb-20" data-reveal>
+          <p class="eyebrow mb-4">How I Think</p>
+          <h2 class="text-3xl sm:text-4xl md:text-5xl font-display text-text-primary leading-tight">
+            Opinions I've earned<br/>
+            <em class="text-accent">by getting things wrong.</em>
+          </h2>
+        </div>
+
+        <div class="space-y-0 divide-y divide-border-subtle">
+
+          <div class="thinking-row" data-reveal data-reveal-delay="0">
+            <span class="thinking-num">01</span>
+            <div class="thinking-content">
+              <h3 class="thinking-title">Start with the problem, not the framework.</h3>
+              <p class="thinking-body">
+                Reaching for a tool before understanding the problem is how you end up with a React app that should have been a static page, or a microservice that should have been a function. I try to ask "what does this actually need to do?" before I open a terminal.
+              </p>
+            </div>
+          </div>
+
+          <div class="thinking-row" data-reveal data-reveal-delay="80">
+            <span class="thinking-num">02</span>
+            <div class="thinking-content">
+              <h3 class="thinking-title">Write backend code as if the next person is having a bad day.</h3>
+              <p class="thinking-body">
+                Clear variable names, predictable function behaviour, errors that tell you what went wrong and where. Not because it's elegant — because at 2am when something breaks, you want to read code, not decode it.
+              </p>
+            </div>
+          </div>
+
+          <div class="thinking-row" data-reveal data-reveal-delay="160">
+            <span class="thinking-num">03</span>
+            <div class="thinking-content">
+              <h3 class="thinking-title">UI is a product decision, not a decoration layer.</h3>
+              <p class="thinking-body">
+                Every layout choice, every interaction, every piece of copy is a decision about how someone experiences your product. Treating frontend as "just making it look nice" is how you ship interfaces that work technically but fail the person using them.
+              </p>
+            </div>
+          </div>
+
+          <div class="thinking-row" data-reveal data-reveal-delay="240">
+            <span class="thinking-num">04</span>
+            <div class="thinking-content">
+              <h3 class="thinking-title">Learning in public is faster than learning in private.</h3>
+              <p class="thinking-body">
+                Writing about what you're learning — even badly — forces you to understand it well enough to explain it. The feedback loop is faster, the retention is better, and occasionally someone tells you you're wrong in a way that saves you weeks.
+              </p>
+            </div>
+          </div>
+
+          <div class="thinking-row" data-reveal data-reveal-delay="320">
+            <span class="thinking-num">05</span>
+            <div class="thinking-content">
+              <h3 class="thinking-title">AI raises the floor on execution. The ceiling is now entirely about how well you think.</h3>
+              <p class="thinking-body">
+                Anyone can generate working code in 2025. What you can't generate is the judgement to know what's worth building, the taste to know when something is wrong, and the clarity to explain a decision to someone who has to live with it. That's what I'm actually developing.
+              </p>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ─── STACK ─────────────────────────────────────────────────────── -->
+    <section class="py-16 sm:py-24 md:py-36 px-5 sm:px-8 bg-bg-base">
+      <div class="max-w-6xl mx-auto">
+
+        <div class="mb-10 sm:mb-16 md:mb-20" data-reveal>
+          <p class="eyebrow mb-4">Stack</p>
+          <h2 class="text-3xl sm:text-4xl md:text-5xl font-display text-text-primary">The tools I reach for.</h2>
+        </div>
+
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
+
+          <div class="stack-card" data-reveal data-reveal-delay="0">
+            <div class="stack-card-icon">
+              <span class="material-symbols-outlined text-accent">layers</span>
+            </div>
+            <h3 class="text-base font-semibold text-text-primary mb-4">Frontend</h3>
+            <div class="flex flex-wrap gap-2">
+              <span class="tag">HTML / CSS</span>
+              <span class="tag">JavaScript</span>
+              <span class="tag">React</span>
+              <span class="tag">Tailwind</span>
+            </div>
+          </div>
+
+          <div class="stack-card" data-reveal data-reveal-delay="80">
+            <div class="stack-card-icon">
+              <span class="material-symbols-outlined text-accent">terminal</span>
+            </div>
+            <h3 class="text-base font-semibold text-text-primary mb-4">Backend</h3>
+            <div class="flex flex-wrap gap-2">
+              <span class="tag">Node.js</span>
+              <span class="tag">Express</span>
+              <span class="tag">Java</span>
+              <span class="tag">REST APIs</span>
+            </div>
+          </div>
+
+          <div class="stack-card" data-reveal data-reveal-delay="160">
+            <div class="stack-card-icon">
+              <span class="material-symbols-outlined text-accent">database</span>
+            </div>
+            <h3 class="text-base font-semibold text-text-primary mb-4">Data</h3>
+            <div class="flex flex-wrap gap-2">
+              <span class="tag">MongoDB</span>
+              <span class="tag">SQL</span>
+              <span class="tag">Python</span>
+              <span class="tag">AI / ML</span>
+            </div>
+          </div>
+
+          <div class="stack-card" data-reveal data-reveal-delay="240">
+            <div class="stack-card-icon">
+              <span class="material-symbols-outlined text-accent">build</span>
+            </div>
+            <h3 class="text-base font-semibold text-text-primary mb-4">Workflow</h3>
+            <div class="flex flex-wrap gap-2">
+              <span class="tag">Git</span>
+              <span class="tag">GitHub</span>
+              <span class="tag">VS Code</span>
+            </div>
+          </div>
+
+        </div>
+
+        <!-- AI tools row — separate, intentionally distinct from the stack -->
+        <div class="mt-8 p-6 border border-border-subtle rounded-xl" data-reveal data-reveal-delay="100">
+          <div class="flex flex-col sm:flex-row sm:items-center gap-4 sm:gap-8">
+            <p class="eyebrow shrink-0">I think with</p>
+            <div class="flex flex-wrap gap-2">
+              <span class="tag-ai">Claude</span>
+              <span class="tag-ai">ChatGPT</span>
+              <span class="tag-ai">GitHub Copilot</span>
+              <span class="tag-ai">Cursor</span>
+              <span class="tag-ai">Kiro</span>
+            </div>
+            <p class="text-text-tertiary font-mono text-[0.6rem] tracking-widest uppercase sm:ml-auto shrink-0">Not a crutch. A multiplier.</p>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ─── AI WORKFLOW ───────────────────────────────────────────────── -->
+    <section class="py-16 sm:py-24 md:py-36 px-5 sm:px-8 bg-bg-raised" id="ai-workflow">
+      <div class="max-w-6xl mx-auto">
+
+        <div class="mb-10 sm:mb-16 md:mb-20" data-reveal>
+          <p class="eyebrow mb-4">How I Use AI</p>
+          <h2 class="text-3xl sm:text-4xl md:text-5xl font-display text-text-primary leading-tight">
+            Not a shortcut.<br/>
+            <em class="text-accent">A way of thinking faster.</em>
+          </h2>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-5">
+
+          <div class="ai-card" data-reveal data-reveal-delay="0">
+            <p class="ai-card-label">What I use it for</p>
+            <ul class="ai-card-list">
+              <li>Compressing the distance between idea and working prototype</li>
+              <li>Exploring tradeoffs in architecture before committing to one</li>
+              <li>Reviewing my own code for edge cases I might have missed</li>
+              <li>Understanding unfamiliar codebases or concepts faster</li>
+              <li>Generating boilerplate so I can focus on the parts that actually require judgement</li>
+            </ul>
+          </div>
+
+          <div class="ai-card" data-reveal data-reveal-delay="100">
+            <p class="ai-card-label">What I don't trust it for</p>
+            <ul class="ai-card-list">
+              <li>Deciding what's worth building in the first place</li>
+              <li>Security-sensitive logic — I always read and understand that myself</li>
+              <li>The final call on architecture — it suggests, I decide</li>
+              <li>Anything where being wrong has a real cost</li>
+              <li>Replacing the thinking that makes the output actually good</li>
+            </ul>
+          </div>
+
+        </div>
+
+        <blockquote class="mt-10 border-l-2 border-accent pl-6 py-1" data-reveal>
+          <p class="text-text-secondary text-lg leading-relaxed font-display italic">
+            "I use AI to compress the distance between idea and working code. I use my own judgement to decide if the idea was worth building in the first place."
+          </p>
+        </blockquote>
+
+      </div>
+    </section>
+
+    <!-- ─── CAPABILITIES ──────────────────────────────────────────────── -->
+    <section class="py-16 sm:py-24 md:py-36 px-5 sm:px-8 bg-bg-raised" id="capabilities">
+      <div class="max-w-6xl mx-auto">
+
+        <div class="mb-10 sm:mb-16 md:mb-20" data-reveal>
+          <p class="eyebrow mb-4">What I Build</p>
+          <h2 class="text-3xl sm:text-4xl md:text-5xl font-display text-text-primary leading-tight">
+            The kind of work<br/>I'm here to do.
+          </h2>
+          <p class="text-text-secondary mt-6 max-w-lg leading-relaxed font-light">
+            No shipped products yet — but a clear sense of what I'm building toward. Each of these is a real problem space with a real approach, not a skill list dressed up as a project.
+          </p>
+        </div>
+
+        <!-- Item 5: Micro case study cards -->
+        <div class="space-y-5">
+
+          <div class="case-card" data-reveal data-reveal-delay="0">
+            <div class="case-card-header">
+              <span class="case-num">01</span>
+              <h3 class="case-title">Interfaces worth using</h3>
+              <div class="case-tags">
+                <span class="tag-accent">React</span>
+                <span class="tag-accent">Tailwind</span>
+                <span class="tag-accent">JS</span>
+              </div>
+            </div>
+            <div class="case-card-body">
+              <div class="case-col">
+                <p class="case-col-label">The problem</p>
+                <p class="case-col-text">Most interfaces are built for the developer's mental model, not the user's. The result is UIs that technically work but feel like work to use — confusing flows, inconsistent feedback, layouts that break on anything other than a 1440px screen.</p>
+              </div>
+              <div class="case-col">
+                <p class="case-col-label">My approach</p>
+                <p class="case-col-text">Start with the user's goal, not the component library. Build responsive from the start, not as an afterthought. Treat every interaction — hover, focus, error state — as part of the product, not a detail to polish later.</p>
+              </div>
+              <div class="case-col">
+                <p class="case-col-label">What I'd build</p>
+                <p class="case-col-text">A dashboard or data-heavy interface where the challenge isn't just displaying information, but making it scannable, actionable, and fast — even on a slow connection or a small screen.</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="case-card" data-reveal data-reveal-delay="60">
+            <div class="case-card-header">
+              <span class="case-num">02</span>
+              <h3 class="case-title">Systems that hold up</h3>
+              <div class="case-tags">
+                <span class="tag-accent">Node.js</span>
+                <span class="tag-accent">Express</span>
+                <span class="tag-accent">MongoDB</span>
+              </div>
+            </div>
+            <div class="case-card-body">
+              <div class="case-col">
+                <p class="case-col-label">The problem</p>
+                <p class="case-col-text">Backend code that works in development has a habit of failing in production in ways nobody predicted. Unhandled edge cases, brittle database queries, APIs that return different shapes depending on the mood of the server.</p>
+              </div>
+              <div class="case-col">
+                <p class="case-col-label">My approach</p>
+                <p class="case-col-text">Design APIs contract-first — know what they return before writing the logic. Handle errors explicitly, not optimistically. Keep the data layer separate from the business logic so neither becomes a liability when requirements change.</p>
+              </div>
+              <div class="case-col">
+                <p class="case-col-label">What I'd build</p>
+                <p class="case-col-text">A REST API for a real-world domain — authentication, resource management, role-based access — with clean error handling, consistent response shapes, and a structure that doesn't collapse when a new feature gets added.</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="case-card" data-reveal data-reveal-delay="120">
+            <div class="case-card-header">
+              <span class="case-num">03</span>
+              <h3 class="case-title">Data that means something</h3>
+              <div class="case-tags">
+                <span class="tag-accent">Python</span>
+                <span class="tag-accent">AI / ML</span>
+                <span class="tag-accent">SQL</span>
+              </div>
+            </div>
+            <div class="case-card-body">
+              <div class="case-col">
+                <p class="case-col-label">The problem</p>
+                <p class="case-col-text">Most applications collect data and do nothing useful with it. It sits in a database, gets queried for basic reports, and never informs a single product decision. The gap between "we have data" and "we understand our users" is enormous.</p>
+              </div>
+              <div class="case-col">
+                <p class="case-col-label">My approach</p>
+                <p class="case-col-text">Currently learning the fundamentals — how models are trained, how to evaluate them honestly, and how to integrate ML outputs into a product without making the product dependent on the model being right 100% of the time.</p>
+              </div>
+              <div class="case-col">
+                <p class="case-col-label">What I'm exploring</p>
+                <p class="case-col-text">Small, focused ML experiments — classification problems, data cleaning pipelines, simple predictive models — that build intuition for what's actually hard about making data useful in a production context.</p>
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+        <!-- Item 7: In-progress project card -->
+        <div class="mt-12 in-progress-card" data-reveal>
+          <div class="in-progress-badge">
+            <span class="in-progress-dot"></span>
+            In progress
+          </div>
+          <div class="in-progress-body">
+            <div>
+              <h3 class="text-xl font-display text-text-primary mb-2">[ Project name TBD ]</h3>
+              <p class="text-text-secondary text-sm leading-relaxed font-light max-w-xl">
+                <!-- TODO: Fill this in when you start your first real project.
+                     Describe what it does in one sentence, what problem it solves,
+                     and what stack you're using. Even a small utility counts. -->
+                Something I'm actively building. Details here once there's something worth showing — a real repo, a real problem, a real solution.
+              </p>
+            </div>
+            <div class="in-progress-links">
+              <a href="https://github.com/VanshS-21" target="_blank" rel="noopener noreferrer" class="in-progress-link">
+                <span class="material-symbols-outlined" style="font-size:1rem">terminal</span>
+                Follow on GitHub
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Honest note -->
+        <div class="mt-8 p-8 border border-border-subtle rounded-xl flex gap-6 items-start" data-reveal>
+          <span class="material-symbols-outlined text-accent mt-0.5 shrink-0">info</span>
+          <div>
+            <p class="text-text-primary font-medium mb-1">Currently building in public.</p>
+            <p class="text-text-secondary text-sm leading-relaxed font-light">
+              I'm at the stage where I'm learning by doing — working through real problems, building small things, and getting better every week. Follow along on
+              <a href="https://github.com/VanshS-21" target="_blank" rel="noopener noreferrer"
+                 class="text-accent hover:underline underline-offset-2 transition-colors">GitHub</a>
+              or reach out if you want to collaborate on something early-stage.
+            </p>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ─── LEARNING LOG ──────────────────────────────────────────────── -->
+    <section class="py-16 sm:py-24 md:py-36 px-5 sm:px-8 bg-bg-base" id="log">
+      <div class="max-w-6xl mx-auto">
+
+        <div class="mb-10 sm:mb-16 md:mb-20" data-reveal>
+          <p class="eyebrow mb-4">Learning Log</p>
+          <h2 class="text-3xl sm:text-4xl md:text-5xl font-display text-text-primary leading-tight">
+            What I'm figuring out,<br/>
+            <em class="text-accent">week by week.</em>
+          </h2>
+          <p class="text-text-secondary mt-6 max-w-lg leading-relaxed font-light">
+            Not a blog. No essays. Just short, honest notes on what I'm learning and how it's changing how I think. Updated manually — no algorithm, no schedule.
+          </p>
+        </div>
+
+        <div class="space-y-0 divide-y divide-border-subtle" id="log-entries">
+
+          <!--
+          ═══════════════════════════════════════════════════════════════
+          HOW TO ADD A NEW LOG ENTRY — copy the block below, paste it
+          above the previous entry (newest first), update the date, tag,
+          title and body text. Tags: Frontend · Backend · AI / ML · Tools
+          ═══════════════════════════════════════════════════════════════
+
+          <div class="log-entry" data-reveal>
+            <div class="log-meta">
+              <span class="log-date">Mon YYYY</span>
+              <span class="log-tag">Tag</span>
+            </div>
+            <div class="log-body">
+              <h3 class="log-title">Your title here.</h3>
+              <p class="log-text">2–3 sentences. What did you learn? How did it change how you think?</p>
+            </div>
+          </div>
+          -->
+          <div class="log-entry" data-reveal>
+            <div class="log-meta">
+              <span class="log-date">Apr 2025</span>
+              <span class="log-tag">AI / ML</span>
+            </div>
+            <div class="log-body">
+              <h3 class="log-title">The difference between a model that's accurate and one that's useful.</h3>
+              <p class="log-text">
+                <!-- TODO: Write 2–3 sentences about something you actually learned this week.
+                     Keep it specific. "I learned X, and it changed how I think about Y." -->
+                High accuracy on a test set doesn't mean a model is useful in production. This week I started understanding why — distribution shift, class imbalance, the gap between what a model optimises for and what the product actually needs. It's made me more skeptical of benchmark numbers.
+              </p>
+            </div>
+          </div>
+
+          <!-- Entry 2 — placeholder -->
+          <div class="log-entry" data-reveal data-reveal-delay="60">
+            <div class="log-meta">
+              <span class="log-date">Mar 2025</span>
+              <span class="log-tag">Backend</span>
+            </div>
+            <div class="log-body">
+              <h3 class="log-title">Why I stopped treating error handling as an afterthought.</h3>
+              <p class="log-text">
+                <!-- TODO: Replace with a real experience -->
+                I spent an afternoon debugging an Express API that was silently swallowing errors and returning 200s for failed operations. The fix was ten lines. The lesson was: explicit error handling isn't defensive programming, it's just honest programming.
+              </p>
+            </div>
+          </div>
+
+          <!-- Entry 3 — placeholder -->
+          <div class="log-entry" data-reveal data-reveal-delay="120">
+            <div class="log-meta">
+              <span class="log-date">Feb 2025</span>
+              <span class="log-tag">Frontend</span>
+            </div>
+            <div class="log-body">
+              <h3 class="log-title">CSS is not a styling language. It's a layout system with styling attached.</h3>
+              <p class="log-text">
+                <!-- TODO: Replace with a real experience -->
+                I used to fight CSS. Then I stopped thinking about it as "making things look right" and started thinking about it as "describing relationships between boxes." Once that clicked, Flexbox and Grid stopped feeling like magic and started feeling like logic.
+              </p>
+            </div>
+          </div>
+
+          <!-- Add more entries above this comment as you learn things -->
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ─── CONTACT ───────────────────────────────────────────────────── -->
+    <section class="py-16 sm:py-24 md:py-36 px-5 sm:px-8 bg-bg-base" id="contact">
+      <div class="max-w-6xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-24">
+
+        <div class="space-y-12" data-reveal>
+          <div class="space-y-6">
+            <p class="eyebrow">Contact</p>
+            <h2 class="text-4xl sm:text-5xl md:text-6xl font-display text-text-primary leading-[1.1]">
+              Let's make<br/>
+              <em class="text-accent">something real.</em>
+            </h2>
+            <p class="text-text-secondary text-lg max-w-sm leading-relaxed font-light">
+              Whether it's a project, a collaboration, or just a conversation about what you're building — I'm listening.
+            </p>
+          </div>
+
+          <div class="space-y-6">
+            <a class="contact-link" href="mailto:vansh.connectme@gmail.com">
+              <div class="contact-icon">
+                <span class="material-symbols-outlined text-sm">alternate_email</span>
+              </div>
+              <span class="contact-link-text font-mono text-sm tracking-wide">vansh.connectme@gmail.com</span>
+            </a>
+
+            <a class="contact-link" href="https://github.com/VanshS-21" target="_blank" rel="noopener noreferrer">
+              <div class="contact-icon">
+                <span class="material-symbols-outlined text-sm">terminal</span>
+              </div>
+              <span class="contact-link-text font-mono text-sm tracking-wide">github.com/VanshS-21</span>
+            </a>
+
+            <a class="contact-link" href="https://www.linkedin.com/in/vanshsahu21/" target="_blank" rel="noopener noreferrer">
+              <div class="contact-icon">
+                <span class="material-symbols-outlined text-sm">connect_without_contact</span>
+              </div>
+              <span class="contact-link-text font-mono text-sm tracking-wide">linkedin.com/in/vanshsahu21</span>
+            </a>
+          </div>
+        </div>
+
+        <!-- Form -->
+        <div class="bg-bg-surface border border-border-subtle p-8 md:p-12 rounded-xl" style="border-color: rgba(240,235,227,0.04);" data-reveal data-reveal-delay="150">
+          <form class="space-y-7" id="contact-form" style="color-scheme: dark;">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-7">
+              <div class="form-group">
+                <label class="form-label" for="input-name">Name</label>
+                <input class="form-input" id="input-name" type="text" name="name" placeholder="Your name" required
+                       style="background-color:#1a1815;color:#f0ebe3;"/>
+              </div>
+              <div class="form-group">
+                <label class="form-label" for="input-email">Email</label>
+                <input class="form-input" id="input-email" type="email" name="email" placeholder="your@email.com" required
+                       style="background-color:#1a1815;color:#f0ebe3;"/>
+              </div>
+            </div>
+            <div class="form-group">
+              <label class="form-label" for="input-message">Message</label>
+              <textarea class="form-input resize-none" id="input-message" name="message" rows="5" placeholder="What's on your mind?" maxlength="2000" required
+                        style="background-color:#1a1815;color:#f0ebe3;"></textarea>
+            </div>
+            <button class="btn-submit" type="submit">Send message</button>
+          </form>
+        </div>
+
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ─── FOOTER ────────────────────────────────────────────────────── -->
+  <footer class="bg-bg-raised border-t border-border-subtle py-10 px-5 sm:px-8">
+    <div class="max-w-6xl mx-auto flex flex-col md:flex-row justify-between items-center gap-4">
+      <p class="font-mono text-text-tertiary text-[0.75rem] tracking-[0.2em] uppercase">© <span id="footer-year"></span> Vansh. All rights reserved.</p>
+      <div class="flex gap-8">
+        <a class="footer-link" href="https://github.com/VanshS-21" target="_blank" rel="noopener noreferrer">GitHub</a>
+        <a class="footer-link" href="https://www.linkedin.com/in/vanshsahu21/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+        <a class="footer-link" href="mailto:vansh.connectme@gmail.com">Email</a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Noscript fallback — makes all scroll-reveal elements visible if JS is disabled -->
+  <noscript>
+    <style>
+      [data-reveal] { opacity: 1 !important; transform: none !important; }
+      .animate-in   { opacity: 1 !important; transform: none !important; animation: none !important; }
+      #ticker-track::before { content: 'Currently learning: ML · React · Node.js · SQL'; font-family: monospace; font-size: 0.6rem; letter-spacing: 0.15em; text-transform: uppercase; color: rgba(200,144,106,0.6); padding: 0 2rem; }
+      .terminal-kbd { display: none; }
     </style>
-<style>
-    body {
-      min-height: max(884px, 100dvh);
-    }
-  </style>
-  <link rel="stylesheet" href="index.css" />
-  <script src="script.js" defer></script>
-  </head>
-<body class="dark">
-<!-- TopAppBar -->
-<nav class="fixed top-0 z-50 w-full px-8 py-6 glass-nav flex justify-between items-center max-w-full mx-auto">
-<div class="flex items-center gap-3">
-<span class="material-symbols-outlined text-[#C8906A]">fingerprint</span>
-<span class="text-2xl font-display tracking-tighter text-[#F4EFE3]">VANSH</span>
-</div>
-<div class="hidden md:flex gap-8 items-center">
-<a class="text-[#F4EFE3]/60 font-medium hover:text-[#C8906A] transition-all duration-400 ease-in-out uppercase tracking-[0.15em] text-[0.75rem]" href="#about">About</a>
-<a class="text-[#F4EFE3]/60 font-medium hover:text-[#C8906A] transition-all duration-400 ease-in-out uppercase tracking-[0.15em] text-[0.75rem]" href="#work">Work</a>
-<a class="text-[#F4EFE3]/60 font-medium hover:text-[#C8906A] transition-all duration-400 ease-in-out uppercase tracking-[0.15em] text-[0.75rem]" href="#contact">Contact</a>
-</div>
-<button class="bg-transparent border border-[#C8906A]/50 text-[#C8906A] px-6 py-2 rounded-full font-medium tracking-widest text-xs hover:bg-[#C8906A]/10 transition-all active:scale-95 duration-400">HIRE ME</button>
-</nav>
-<main>
-<!-- Hero Section -->
-<section class="relative min-h-[884px] flex flex-col justify-center items-center text-center px-6 overflow-hidden">
-<!-- Decorative Elements -->
-<div class="absolute top-1/4 -left-12 opacity-10 select-none pointer-events-none">
-<span class="text-[12rem] font-display text-[#F4EFE3]"></span>
-<svg class="fill-[#C8906A] animate-pulse" height="200" viewbox="0 0 100 100" width="200">
-<path d="M50 0L55 45L100 50L55 55L50 100L45 55L0 50L45 45Z"></path>
-</svg>
-</div>
-<div class="absolute bottom-1/4 -right-12 opacity-10 select-none pointer-events-none">
-<span class="text-[20rem] font-display leading-none">*</span>
-</div>
-<div class="relative z-10 space-y-6 max-w-4xl">
-<p class="tracking-[0.15em] uppercase text-[#C8906A] text-xs font-semibold">The Portfolio of</p>
-<h1 class="text-6xl md:text-8xl font-display text-[#F4EFE3] leading-[1.1]">Software Developer</h1>
-<p class="text-lg md:text-xl text-[#e6e2de]/70 max-w-2xl mx-auto font-body leading-relaxed">
-                    I build fast, scalable web products — from pixel to production.
-                </p>
-<div class="flex flex-col sm:flex-row gap-6 justify-center pt-8">
-<a class="px-8 py-4 rounded-full border border-[#C8906A] text-[#C8906A] hover:bg-[#C8906A]/10 transition-all duration-500 font-medium uppercase tracking-widest text-sm" href="#work">View Work</a>
-<a class="px-8 py-4 rounded-full text-[#F4EFE3]/60 hover:text-[#F4EFE3] transition-all duration-500 font-medium uppercase tracking-widest text-sm group" href="#contact">
-                        Get in Touch
-                        <span class="block h-px w-0 bg-[#F4EFE3] group-hover:w-full transition-all duration-500 mx-auto mt-1"></span>
-</a>
-</div>
-</div>
-<div class="absolute bottom-10 left-1/2 -translate-x-1/2 animate-bounce opacity-40">
-<span class="material-symbols-outlined">expand_more</span>
-</div>
-</section>
-<!-- About Section -->
-<section class="py-32 px-8 bg-surface-container-low" id="about">
-<div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-12 gap-16 items-start">
-<div class="md:col-span-4">
-<p class="tracking-[0.15em] uppercase text-[#C8906A] text-xs font-semibold mb-8">ABOUT ME</p>
-<span class="serif-numbers text-[120px] leading-none text-[#C8906A]/20 block">01</span>
-</div>
-<div class="md:col-span-8 space-y-12">
-<div class="space-y-8">
-<p class="text-3xl md:text-4xl font-display text-[#F4EFE3] leading-tight">
-                            Passionate computer science student building modern web applications.
-                        </p>
-<div class="prose prose-invert max-w-none text-[#e6e2de]/70 text-lg leading-relaxed space-y-6">
-<p>I am a 4th-semester computer science student with a strong foundation in both frontend and backend technologies. I enjoy turning complex problems into simple, beautiful, and intuitive interfaces.</p>
-<p>Currently, my focus is on mastering full-stack web development and exploring new technologies. I treat every project as an opportunity to learn, improve my craft, and build robust software that matters.</p>
-</div>
-</div>
-</div>
-</div>
-</section>
-<!-- Expertise / Stack Section -->
-<section class="py-32 px-8 bg-surface-dim">
-<div class="max-w-7xl mx-auto">
-<p class="tracking-[0.15em] uppercase text-[#C8906A] text-xs font-semibold mb-6">EXPERTISE</p>
-<h2 class="text-4xl md:text-5xl font-display text-[#F4EFE3] mb-16">The tools I trust.</h2>
-<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
-<!-- Frontend -->
-<div class="p-8 bg-surface-container rounded-xl transition-all duration-500 hover:bg-surface-container-high group">
-<span class="material-symbols-outlined text-[#7FA88A] mb-6 text-3xl">brush</span>
-<h3 class="text-xl font-bold mb-6 text-[#F4EFE3]">Frontend</h3>
-<div class="flex flex-wrap gap-2">
-<span class="px-3 py-1 bg-surface-dim text-[#e6e2de]/60 rounded-full text-xs uppercase tracking-wider">HTML/CSS</span>
-<span class="px-3 py-1 bg-surface-dim text-[#e6e2de]/60 rounded-full text-xs uppercase tracking-wider">JavaScript</span>
-<span class="px-3 py-1 bg-surface-dim text-[#e6e2de]/60 rounded-full text-xs uppercase tracking-wider">React</span>
-<span class="px-3 py-1 bg-surface-dim text-[#e6e2de]/60 rounded-full text-xs uppercase tracking-wider">Tailwind</span>
-</div>
-</div>
-<!-- Backend -->
-<div class="p-8 bg-surface-container rounded-xl transition-all duration-500 hover:bg-surface-container-high group">
-<span class="material-symbols-outlined text-[#C8906A] mb-6 text-3xl">terminal</span>
-<h3 class="text-xl font-bold mb-6 text-[#F4EFE3]">Backend</h3>
-<div class="flex flex-wrap gap-2">
-<span class="px-3 py-1 bg-surface-dim text-[#e6e2de]/60 rounded-full text-xs uppercase tracking-wider">Node.js</span>
-<span class="px-3 py-1 bg-surface-dim text-[#e6e2de]/60 rounded-full text-xs uppercase tracking-wider">Express</span>
-<span class="px-3 py-1 bg-surface-dim text-[#e6e2de]/60 rounded-full text-xs uppercase tracking-wider">Java</span>
-</div>
-</div>
-<!-- Database -->
-<div class="p-8 bg-surface-container rounded-xl transition-all duration-500 hover:bg-surface-container-high group">
-<span class="material-symbols-outlined text-[#C4A257] mb-6 text-3xl">database</span>
-<h3 class="text-xl font-bold mb-6 text-[#F4EFE3]">Database</h3>
-<div class="flex flex-wrap gap-2">
-<span class="px-3 py-1 bg-surface-dim text-[#e6e2de]/60 rounded-full text-xs uppercase tracking-wider">MongoDB</span>
-<span class="px-3 py-1 bg-surface-dim text-[#e6e2de]/60 rounded-full text-xs uppercase tracking-wider">SQL</span>
-</div>
-</div>
-<!-- Tools -->
-<div class="p-8 bg-surface-container rounded-xl transition-all duration-500 hover:bg-surface-container-high group">
-<span class="material-symbols-outlined text-secondary-fixed mb-6 text-3xl">build</span>
-<h3 class="text-xl font-bold mb-6 text-[#F4EFE3]">Tools</h3>
-<div class="flex flex-wrap gap-2">
-<span class="px-3 py-1 bg-surface-dim text-[#e6e2de]/60 rounded-full text-xs uppercase tracking-wider">Git</span>
-<span class="px-3 py-1 bg-surface-dim text-[#e6e2de]/60 rounded-full text-xs uppercase tracking-wider">GitHub</span>
-</div>
-</div>
-</div>
-</div>
-</section>
-<!-- Projects Section -->
-<section class="py-32 px-8 bg-surface-container-low" id="work">
-<div class="max-w-4xl mx-auto space-y-16">
-<div class="text-center md:text-left">
-<p class="tracking-[0.15em] uppercase text-[#C8906A] text-xs font-semibold mb-6">SELECTED WORK</p>
-<h2 class="text-4xl md:text-5xl font-display text-[#F4EFE3]">Things I've built.</h2>
-</div>
-<div class="space-y-24">
-<!-- Project 1 -->
-<article class="grid grid-cols-1 gap-8 group">
-<div class="aspect-[16/9] bg-surface-container overflow-hidden rounded-lg">
-<img alt="Minimal design system preview" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105 opacity-80" data-alt="abstract geometric composition with flowing liquid shapes in muted charcoal and warm terracotta tones 3d render" src="images/project1.png"/>
-</div>
-<div class="space-y-6">
-<div class="flex items-center gap-4">
-<span class="serif-numbers text-2xl text-[#C8906A]">01</span>
-<h3 class="text-3xl font-display text-[#F4EFE3]">E-Commerce Dashboard</h3>
-</div>
-<p class="text-[#e6e2de]/70 text-lg leading-relaxed">
-                                A modern, full-stack dashboard concept built to manage inventory, track sales, and visualize data in real-time.
-                            </p>
-<div class="flex flex-wrap gap-3">
-<span class="text-xs font-medium tracking-widest text-[#7FA88A]">REACT</span>
-<span class="text-xs font-medium tracking-widest text-[#7FA88A]">NODE.JS</span>
-<span class="text-xs font-medium tracking-widest text-[#7FA88A]">MONGODB</span>
-</div>
-<div class="flex gap-8 pt-4">
-<a class="text-sm font-bold uppercase tracking-widest text-[#F4EFE3] hover:text-[#C8906A] transition-colors border-b border-transparent hover:border-[#C8906A]" href="#">Live Demo</a>
-<a class="text-sm font-bold uppercase tracking-widest text-[#F4EFE3] hover:text-[#C8906A] transition-colors border-b border-transparent hover:border-[#C8906A]" href="#">GitHub</a>
-</div>
-</div>
-</article>
-<!-- Project 2 -->
-<article class="grid grid-cols-1 gap-8 group">
-<div class="aspect-[16/9] bg-surface-container overflow-hidden rounded-lg">
-<img alt="Clean code interface" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105 opacity-80" data-alt="minimalist desktop workspace with soft ambient lighting showing a clean coding interface and abstract art on screen" src="images/project2.png"/>
-</div>
-<div class="space-y-6">
-<div class="flex items-center gap-4">
-<span class="serif-numbers text-2xl text-[#C8906A]">02</span>
-<h3 class="text-3xl font-display text-[#F4EFE3]">University Portal System</h3>
-</div>
-<p class="text-[#e6e2de]/70 text-lg leading-relaxed">
-                                A comprehensive management system designed for students and faculty to track academic progress and schedules.
-                            </p>
-<div class="flex flex-wrap gap-3">
-<span class="text-xs font-medium tracking-widest text-[#7FA88A]">JAVA</span>
-<span class="text-xs font-medium tracking-widest text-[#7FA88A]">SQL</span>
-<span class="text-xs font-medium tracking-widest text-[#7FA88A]">HTML/CSS</span>
-</div>
-<div class="flex gap-8 pt-4">
-<a class="text-sm font-bold uppercase tracking-widest text-[#F4EFE3] hover:text-[#C8906A] transition-colors border-b border-transparent hover:border-[#C8906A]" href="#">Live Demo</a>
-<a class="text-sm font-bold uppercase tracking-widest text-[#F4EFE3] hover:text-[#C8906A] transition-colors border-b border-transparent hover:border-[#C8906A]" href="#">GitHub</a>
-</div>
-</div>
-</article>
-<!-- Project 3 -->
-<article class="grid grid-cols-1 gap-8 group">
-<div class="aspect-[16/9] bg-surface-container overflow-hidden rounded-lg">
-<img alt="Mobile application mockup" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105 opacity-80" data-alt="cinematic close up of a high-end smartphone screen displaying a luxury lifestyle app with elegant typography and dark theme" src="images/project3.png"/>
-</div>
-<div class="space-y-6">
-<div class="flex items-center gap-4">
-<span class="serif-numbers text-2xl text-[#C8906A]">03</span>
-<h3 class="text-3xl font-display text-[#F4EFE3]">Task Management App</h3>
-</div>
-<p class="text-[#e6e2de]/70 text-lg leading-relaxed">
-                                A sleek and intuitive frontend application for organizing daily tasks with a focus on premium UI and smooth interactions.
-                            </p>
-<div class="flex flex-wrap gap-3">
-<span class="text-xs font-medium tracking-widest text-[#7FA88A]">JAVASCRIPT</span>
-<span class="text-xs font-medium tracking-widest text-[#7FA88A]">TAILWIND</span>
-<span class="text-xs font-medium tracking-widest text-[#7FA88A]">CSS</span>
-</div>
-<div class="flex gap-8 pt-4">
-<a class="text-sm font-bold uppercase tracking-widest text-[#F4EFE3] hover:text-[#C8906A] transition-colors border-b border-transparent hover:border-[#C8906A]" href="#">App Store</a>
-<a class="text-sm font-bold uppercase tracking-widest text-[#F4EFE3] hover:text-[#C8906A] transition-colors border-b border-transparent hover:border-[#C8906A]" href="#">GitHub</a>
-</div>
-</div>
-</article>
-</div>
-</div>
-</section>
-<!-- Contact Section -->
-<section class="py-32 px-8 bg-surface-dim" id="contact">
-<div class="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-24">
-<div class="space-y-12">
-<div class="space-y-6">
-<p class="tracking-[0.15em] uppercase text-[#C8906A] text-xs font-semibold">GET IN TOUCH</p>
-<h2 class="text-5xl md:text-6xl font-display text-[#F4EFE3] leading-tight">Let's build something.</h2>
-<p class="text-[#e6e2de]/60 text-lg max-w-md leading-relaxed">
-                            Have a project in mind or just want to chat about the future of the web? Drop me a line.
-                        </p>
-</div>
-<div class="space-y-8">
-<a class="flex items-center gap-6 group" href="mailto:vansh.connectme@gmail.com">
-<div class="w-12 h-12 rounded-full border border-[#F4EFE3]/10 flex items-center justify-center group-hover:border-[#C8906A] transition-colors duration-500">
-<span class="material-symbols-outlined text-sm">alternate_email</span>
-</div>
-<span class="text-lg font-body text-[#F4EFE3] tracking-wider group-hover:text-[#C8906A] transition-colors">vansh.connectme@gmail.com</span>
-</a>
-<a class="flex items-center gap-6 group" href="https://github.com/VanshS-21" target="_blank" rel="noopener noreferrer">
-<div class="w-12 h-12 rounded-full border border-[#F4EFE3]/10 flex items-center justify-center group-hover:border-[#C8906A] transition-colors duration-500">
-<span class="material-symbols-outlined text-sm">terminal</span>
-</div>
-<span class="text-lg font-body text-[#F4EFE3] tracking-wider group-hover:text-[#C8906A] transition-colors">github.com/VanshS-21</span>
-</a>
-<a class="flex items-center gap-6 group" href="https://www.linkedin.com/in/vanshsahu21/" target="_blank" rel="noopener noreferrer">
-<div class="w-12 h-12 rounded-full border border-[#F4EFE3]/10 flex items-center justify-center group-hover:border-[#C8906A] transition-colors duration-500">
-<span class="material-symbols-outlined text-sm">connect_without_contact</span>
-</div>
-<span class="text-lg font-body text-[#F4EFE3] tracking-wider group-hover:text-[#C8906A] transition-colors">linkedin.com/in/vanshsahu21</span>
-</a>
-</div>
-</div>
-<div class="bg-surface-container p-8 md:p-12 rounded-xl">
-<form class="space-y-8">
-<div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-<div class="space-y-2">
-<label class="block text-[0.7rem] uppercase tracking-widest text-[#F4EFE3]/40">Your Name</label>
-<input class="w-full bg-surface-container-lowest border-none focus:ring-1 focus:ring-[#C8906A]/40 rounded-lg p-4 text-[#F4EFE3]" type="text"/>
-</div>
-<div class="space-y-2">
-<label class="block text-[0.7rem] uppercase tracking-widest text-[#F4EFE3]/40">Email Address</label>
-<input class="w-full bg-surface-container-lowest border-none focus:ring-1 focus:ring-[#C8906A]/40 rounded-lg p-4 text-[#F4EFE3]" type="email"/>
-</div>
-</div>
-<div class="space-y-2">
-<label class="block text-[0.7rem] uppercase tracking-widest text-[#F4EFE3]/40">Message</label>
-<textarea class="w-full bg-surface-container-lowest border-none focus:ring-1 focus:ring-[#C8906A]/40 rounded-lg p-4 text-[#F4EFE3]" rows="4"></textarea>
-</div>
-<button class="w-full py-5 bg-primary-container text-[#4c2709] font-bold uppercase tracking-[0.2em] text-xs rounded-lg hover:bg-[#f7b991] transition-all duration-500 transform active:scale-95" type="submit">Send Message</button>
-</form>
-</div>
-</div>
-</section>
-</main>
-<!-- Footer -->
-<footer class="bg-[#141311] py-12 px-8">
-<div class="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center gap-6">
-<p class="text-[#F4EFE3]/40 text-[0.75rem] tracking-widest uppercase">© 2024 VANSH. ALL RIGHTS RESERVED.</p>
-<div class="flex gap-8">
-<a class="text-[#F4EFE3]/40 hover:text-[#F4EFE3] transition-colors duration-400 text-[0.75rem] tracking-widest uppercase underline-offset-4 hover:underline" href="#">GITHUB</a>
-<a class="text-[#F4EFE3]/40 hover:text-[#F4EFE3] transition-colors duration-400 text-[0.75rem] tracking-widest uppercase underline-offset-4 hover:underline" href="#">LINKEDIN</a>
-<a class="text-[#F4EFE3]/40 hover:text-[#F4EFE3] transition-colors duration-400 text-[0.75rem] tracking-widest uppercase underline-offset-4 hover:underline" href="#">READCV</a>
-</div>
-</div>
-</footer>
-</body></html>
+  </noscript>
+
+</body>
+</html>
