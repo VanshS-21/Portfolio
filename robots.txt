@@ -1,5 +1,5 @@
 User-agent: *
 Allow: /
 
-# Sitemap location — update the domain when you deploy
-Sitemap: https://yourdomain.com/sitemap.xml
+# Sitemap location
+Sitemap: https://portfolio-red-ten-97.vercel.app/sitemap.xml
